@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java,web,android," />
 
 
 
@@ -87,13 +87,14 @@
 
 
 <meta name="description" content="我的第一篇hexo博客。。。">
+<meta name="keywords" content="java,web,android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="fitstHexoBlog">
 <meta property="og:url" content="http://yoursite.com/2018/09/17/fitstHexoBlog/index.html">
-<meta property="og:site_name" content="Hans的博客">
+<meta property="og:site_name" content="Hans&#39; blog">
 <meta property="og:description" content="我的第一篇hexo博客。。。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-19T16:26:24.852Z">
+<meta property="og:updated_time" content="2018-09-22T16:25:03.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="fitstHexoBlog">
 <meta name="twitter:description" content="我的第一篇hexo博客。。。">
@@ -132,7 +133,7 @@
 
 
 
-  <title>fitstHexoBlog | Hans的博客</title>
+  <title>fitstHexoBlog | Hans' blog</title>
   
 
 
@@ -162,7 +163,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hans的博客</span>
+        <span class="site-title">Hans' blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -298,7 +299,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hans的博客">
+      <meta itemprop="name" content="Hans' blog">
     </span>
 
     
@@ -334,15 +335,47 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-20T00:26:24+08:00">
-                2018-09-20
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-23T00:25:03+08:00">
+                2018-09-23
               </time>
             
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/17/fitstHexoBlog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/17/fitstHexoBlog/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -425,6 +458,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/web/" rel="tag"># web</a>
+          
+            <a href="/tags/android/" rel="tag"># android</a>
+          
+        </div>
       
 
       
@@ -525,7 +568,25 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -766,6 +827,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'HFNYKv2BT3paS23qqYwBaXml',
+        appKey: 'jLRmJ1U8zEu1DHLCjES4wowW',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
