@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="SpringBoot," />
+  <meta name="keywords" content="excel," />
 
 
 
@@ -86,21 +86,18 @@
 
 
 
-<meta name="description" content="关于在SpringBoot的应用里，最方便的莫过于可以直接把工程打成一个jar/war包，由于内嵌了tomcat，所以可以直接在服务器上启动。而SpringBoot适合前后端分离，所以建议打jar包，在服务器上，通过java -jar xx.jar即可启动。 打包流程1.在pom文件中添加打包插件12345678910111213141516171819202122&amp;lt;!-- 打包spring">
-<meta name="keywords" content="SpringBoot">
+<meta name="description" content="关于有这样一个场景，有一次，公司一个同事说，excel表格中，想在每行换行的地方追加”\\“符号，以便该excel表格在导入jira系统的时候，该符号会被系统识别为换行符，方便阅读。于是乎有了下面的研究成果。 完整的vb宏程序1.打开vb宏编辑窗口，可使用快捷键Alt+F11打开，然后粘贴下面程序。下面的代码可以实现，在你选择的区域，运行宏，则该区域上，凡是换行符的位置都会追加上”\\“符号。12">
+<meta name="keywords" content="excel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot工程打包">
-<meta property="og:url" content="https://huangweicai.github.io/2018/12/30/springboot_makejar/index.html">
+<meta property="og:title" content="VB宏程序，实现换行追加&quot;\\&quot;符号">
+<meta property="og:url" content="https://huangweicai.github.io/2018/12/31/VB宏程序实现换行追加符号/index.html">
 <meta property="og:site_name" content="Hans&#39; Blog">
-<meta property="og:description" content="关于在SpringBoot的应用里，最方便的莫过于可以直接把工程打成一个jar/war包，由于内嵌了tomcat，所以可以直接在服务器上启动。而SpringBoot适合前后端分离，所以建议打jar包，在服务器上，通过java -jar xx.jar即可启动。 打包流程1.在pom文件中添加打包插件12345678910111213141516171819202122&amp;lt;!-- 打包spring">
+<meta property="og:description" content="关于有这样一个场景，有一次，公司一个同事说，excel表格中，想在每行换行的地方追加”\\“符号，以便该excel表格在导入jira系统的时候，该符号会被系统识别为换行符，方便阅读。于是乎有了下面的研究成果。 完整的vb宏程序1.打开vb宏编辑窗口，可使用快捷键Alt+F11打开，然后粘贴下面程序。下面的代码可以实现，在你选择的区域，运行宏，则该区域上，凡是换行符的位置都会追加上”\\“符号。12">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://note.youdao.com/yws/public/resource/deb65d9809f64da2cf633488c0b702bd/xmlnote/9E3857C801964118BBBF329D26499802/8343">
-<meta property="og:image" content="https://note.youdao.com/yws/public/resource/deb65d9809f64da2cf633488c0b702bd/xmlnote/FBA518621143446C88C240A3128926F5/8348">
-<meta property="og:updated_time" content="2018-12-30T05:18:05.117Z">
+<meta property="og:updated_time" content="2018-12-31T10:32:49.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringBoot工程打包">
-<meta name="twitter:description" content="关于在SpringBoot的应用里，最方便的莫过于可以直接把工程打成一个jar/war包，由于内嵌了tomcat，所以可以直接在服务器上启动。而SpringBoot适合前后端分离，所以建议打jar包，在服务器上，通过java -jar xx.jar即可启动。 打包流程1.在pom文件中添加打包插件12345678910111213141516171819202122&amp;lt;!-- 打包spring">
-<meta name="twitter:image" content="https://note.youdao.com/yws/public/resource/deb65d9809f64da2cf633488c0b702bd/xmlnote/9E3857C801964118BBBF329D26499802/8343">
+<meta name="twitter:title" content="VB宏程序，实现换行追加&quot;\\&quot;符号">
+<meta name="twitter:description" content="关于有这样一个场景，有一次，公司一个同事说，excel表格中，想在每行换行的地方追加”\\“符号，以便该excel表格在导入jira系统的时候，该符号会被系统识别为换行符，方便阅读。于是乎有了下面的研究成果。 完整的vb宏程序1.打开vb宏编辑窗口，可使用快捷键Alt+F11打开，然后粘贴下面程序。下面的代码可以实现，在你选择的区域，运行宏，则该区域上，凡是换行符的位置都会追加上”\\“符号。12">
 
 
 
@@ -130,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://huangweicai.github.io/2018/12/30/springboot_makejar/"/>
+  <link rel="canonical" href="https://huangweicai.github.io/2018/12/31/VB宏程序实现换行追加符号/"/>
 
 
 
 
 
-  <title>SpringBoot工程打包 | Hans' Blog</title>
+  <title>VB宏程序，实现换行追加"\\"符号 | Hans' Blog</title>
   
 
 
@@ -293,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://huangweicai.github.io/2018/12/30/springboot_makejar/">
+    <link itemprop="mainEntityOfPage" href="https://huangweicai.github.io/2018/12/31/VB宏程序实现换行追加符号/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hans">
@@ -310,7 +307,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">SpringBoot工程打包</h2>
+          <h2 class="post-title" itemprop="name headline">VB宏程序，实现换行追加"\\"符号</h2>
         
 
         <div class="post-meta">
@@ -322,8 +319,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-30T12:54:33+08:00">
-                2018-12-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-31T18:07:16+08:00">
+                2018-12-31
               </time>
             
 
@@ -338,8 +335,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-12-30T13:18:05+08:00">
-                2018-12-30
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-31T18:32:49+08:00">
+                2018-12-31
               </time>
             
           </span>
@@ -353,8 +350,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/30/springboot_makejar/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/30/springboot_makejar/" itemprop="commentCount"></span>
+                <a href="/2018/12/31/VB宏程序实现换行追加符号/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/31/VB宏程序实现换行追加符号/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -362,7 +359,7 @@
 
           
           
-             <span id="/2018/12/30/springboot_makejar/" class="leancloud_visitors" data-flag-title="SpringBoot工程打包">
+             <span id="/2018/12/31/VB宏程序实现换行追加符号/" class="leancloud_visitors" data-flag-title="VB宏程序，实现换行追加"\\"符号">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  297
+                  361
                 </span>
               
 
@@ -424,11 +421,10 @@
       
 
       
-        <h4 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h4><p>在SpringBoot的应用里，最方便的莫过于可以直接把工程打成一个jar/war包，由于内嵌了tomcat，所以可以直接在服务器上启动。而SpringBoot适合前后端分离，所以建议打jar包，在服务器上，通过java -jar xx.jar即可启动。</p>
-<h4 id="打包流程"><a href="#打包流程" class="headerlink" title="打包流程"></a>打包流程</h4><p>1.在pom文件中添加打包插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 打包spring boot应用 --&gt;</span><br><span class="line">&lt;build&gt;</span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;configuration&gt;</span><br><span class="line">                &lt;!--配置入口--&gt;</span><br><span class="line">                &lt;mainClass&gt;com.aaa.bbb.Application&lt;/mainClass&gt;</span><br><span class="line">            &lt;/configuration&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line"></span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;configuration&gt;</span><br><span class="line">                &lt;source&gt;8&lt;/source&gt;</span><br><span class="line">                &lt;target&gt;8&lt;/target&gt;</span><br><span class="line">            &lt;/configuration&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">    &lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure></p>
-<p>2.Application入口类继承SpringBootServletInitializer抽象类，并实现configure方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Application extends SpringBootServletInitializer &#123;</span><br><span class="line">    </span><br><span class="line">//springboot打包需要</span><br><span class="line">@Override</span><br><span class="line">protected SpringApplicationBuilder configure(</span><br><span class="line">        SpringApplicationBuilder builder) &#123;</span><br><span class="line">    return builder.sources(this.getClass());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>3.执行打包操作<br>在Intellij的最右边点击Maven Project，依次操作，先clean，再install。<br><img src="https://note.youdao.com/yws/public/resource/deb65d9809f64da2cf633488c0b702bd/xmlnote/9E3857C801964118BBBF329D26499802/8343" alt=""></p>
-<p>4.操作完毕后，下面就是SpringBoot打出来的jar包了，快放到服务器上试试吧。<br><img src="https://note.youdao.com/yws/public/resource/deb65d9809f64da2cf633488c0b702bd/xmlnote/FBA518621143446C88C240A3128926F5/8348" alt=""></p>
+        <h4 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h4><p>有这样一个场景，有一次，公司一个同事说，excel表格中，想在每行换行的地方追加”\\“符号，以便该excel表格在导入jira系统的时候，该符号会被系统识别为换行符，方便阅读。于是乎有了下面的研究成果。</p>
+<h4 id="完整的vb宏程序"><a href="#完整的vb宏程序" class="headerlink" title="完整的vb宏程序"></a>完整的vb宏程序</h4><p>1.打开vb宏编辑窗口，可使用快捷键Alt+F11打开，然后粘贴下面程序。下面的代码可以实现，在你选择的区域，运行宏，则该区域上，凡是换行符的位置都会追加上”\\“符号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Sub AppendToSpritOnEnterRight()</span><br><span class="line">Dim c As Range</span><br><span class="line">Dim StaR As String</span><br><span class="line">Dim posStr As String</span><br><span class="line">Dim i As Long</span><br><span class="line">Dim resultStr, cacheStr As String</span><br><span class="line">Dim lastI As Long</span><br><span class="line"></span><br><span class="line">For Each c In Selection</span><br><span class="line">    StaR = c.Value</span><br><span class="line">    </span><br><span class="line">    posStr = &quot;&quot;</span><br><span class="line">    cacheStr = &quot;&quot;</span><br><span class="line">    resultStr = &quot;&quot;</span><br><span class="line">    lastI = 0</span><br><span class="line">    </span><br><span class="line">    For i = 1 To Len(StaR)</span><br><span class="line">        posStr = Mid(StaR, i, 1)</span><br><span class="line">        If posStr = Chr(10) Then &apos;拼接字符串\\</span><br><span class="line">            cacheStr = Mid(StaR, lastI + 1, i - 1 - lastI) &amp; &quot;\\&quot; &amp; Chr(10)</span><br><span class="line">            resultStr = resultStr + cacheStr</span><br><span class="line">            lastI = i</span><br><span class="line">            //MsgBox resultStr</span><br><span class="line">        End If</span><br><span class="line">    Next i</span><br><span class="line">    </span><br><span class="line">    cacheStr = Mid(StaR, lastI + 1, Len(StaR) - lastI)</span><br><span class="line">    resultStr = resultStr + cacheStr</span><br><span class="line">    </span><br><span class="line">    c.Value = resultStr</span><br><span class="line">Next</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure></p>
+<p>2.补充几点<br>常用快捷键：<br>Alt+Entry：换行<br>Alt+F11：打开程序窗口<br>F5：打开运行宏窗口</p>
+<p>函数：<br>Mid(String,start[,Length])<br>String - 必需的参数。输入从中返回指定数量的字符的字符串。<br>Start - 必需的参数。 一个整数，它指定了字符串的起始位置。<br>Length - 必需的参数。 一个整数，指定要返回的字符数。<br>注意：Start需要从1开始。</p>
 
       
     </div>
@@ -482,7 +478,7 @@
 	  </li>
 	  <li class="post-copyright-link">
 		<strong>本文链接：</strong>
-		<a href="/2018/12/30/springboot_makejar/" title="SpringBoot工程打包">2018/12/30/springboot_makejar/</a>
+		<a href="/2018/12/31/VB宏程序实现换行追加符号/" title="VB宏程序，实现换行追加"\\"符号">2018/12/31/VB宏程序实现换行追加符号/</a>
 	  </li>
 	  <li class="post-copyright-license">
 		<strong>版权： </strong>
@@ -495,7 +491,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SpringBoot/" rel="tag"># SpringBoot</a>
+            <a href="/tags/excel/" rel="tag"># excel</a>
           
         </div>
       
@@ -523,8 +519,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/21/sendto_jcenter/" rel="next" title="Android Studio发布项目到Jcenter仓库步骤">
-                <i class="fa fa-chevron-left"></i> Android Studio发布项目到Jcenter仓库步骤
+              <a href="/2018/12/30/保持公司电脑不锁屏技巧/" rel="next" title="保持公司电脑不锁屏技巧">
+                <i class="fa fa-chevron-left"></i> 保持公司电脑不锁屏技巧
               </a>
             
           </div>
@@ -533,8 +529,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/30/keep_computer_no_lock_screen/" rel="prev" title="保持公司电脑不锁屏技巧">
-                保持公司电脑不锁屏技巧 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/06/SpringBoot项目的jar包在服务器上启动的正确姿势/" rel="prev" title="SpringBoot项目的jar包在服务器上启动的正确姿势">
+                SpringBoot项目的jar包在服务器上启动的正确姿势 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -696,7 +692,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#关于"><span class="nav-number">1.</span> <span class="nav-text">关于</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打包流程"><span class="nav-number">2.</span> <span class="nav-text">打包流程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#关于"><span class="nav-number">1.</span> <span class="nav-text">关于</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完整的vb宏程序"><span class="nav-number">2.</span> <span class="nav-text">完整的vb宏程序</span></a></li></ol></div>
             
 
           </div>

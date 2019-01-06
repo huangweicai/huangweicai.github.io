@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="SpringBoot," />
 
 
 
@@ -86,18 +86,21 @@
 
 
 
-<meta name="description" content="前言平时我们经常使用到git，有些朋友喜欢使用git的窗口界面来操作，我个人也蛮喜欢的。不过git命令是学习git的根本，和机器打交道最近的方式，所以学好git对理解git的工作流是很有帮助的。下面梳理一下本人常用的git操作命令。 正文git提交操作流程（进入到项目目录中，然后执行如下命令）＃初始化本地仓库git init＃将本地内容添加至git索引中（注意：每次提交最好都执行一下）git ad">
-<meta name="keywords" content="git">
+<meta name="description" content="关于在SpringBoot的应用里，最方便的莫过于可以直接把工程打成一个jar/war包，由于内嵌了tomcat，所以可以直接在服务器上启动。而SpringBoot适合前后端分离，所以建议打jar包，在服务器上，通过java -jar xx.jar即可启动。 打包流程1.在pom文件中添加打包插件12345678910111213141516171819202122&amp;lt;!-- 打包spring">
+<meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git常用命令小结">
-<meta property="og:url" content="https://huangweicai.github.io/2018/10/11/git_use/index.html">
+<meta property="og:title" content="SpringBoot工程打包">
+<meta property="og:url" content="https://huangweicai.github.io/2018/12/30/SpringBoot工程打包/index.html">
 <meta property="og:site_name" content="Hans&#39; Blog">
-<meta property="og:description" content="前言平时我们经常使用到git，有些朋友喜欢使用git的窗口界面来操作，我个人也蛮喜欢的。不过git命令是学习git的根本，和机器打交道最近的方式，所以学好git对理解git的工作流是很有帮助的。下面梳理一下本人常用的git操作命令。 正文git提交操作流程（进入到项目目录中，然后执行如下命令）＃初始化本地仓库git init＃将本地内容添加至git索引中（注意：每次提交最好都执行一下）git ad">
+<meta property="og:description" content="关于在SpringBoot的应用里，最方便的莫过于可以直接把工程打成一个jar/war包，由于内嵌了tomcat，所以可以直接在服务器上启动。而SpringBoot适合前后端分离，所以建议打jar包，在服务器上，通过java -jar xx.jar即可启动。 打包流程1.在pom文件中添加打包插件12345678910111213141516171819202122&amp;lt;!-- 打包spring">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-10T16:48:10.419Z">
+<meta property="og:image" content="https://note.youdao.com/yws/public/resource/deb65d9809f64da2cf633488c0b702bd/xmlnote/9E3857C801964118BBBF329D26499802/8343">
+<meta property="og:image" content="https://note.youdao.com/yws/public/resource/deb65d9809f64da2cf633488c0b702bd/xmlnote/FBA518621143446C88C240A3128926F5/8348">
+<meta property="og:updated_time" content="2018-12-30T05:18:05.117Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git常用命令小结">
-<meta name="twitter:description" content="前言平时我们经常使用到git，有些朋友喜欢使用git的窗口界面来操作，我个人也蛮喜欢的。不过git命令是学习git的根本，和机器打交道最近的方式，所以学好git对理解git的工作流是很有帮助的。下面梳理一下本人常用的git操作命令。 正文git提交操作流程（进入到项目目录中，然后执行如下命令）＃初始化本地仓库git init＃将本地内容添加至git索引中（注意：每次提交最好都执行一下）git ad">
+<meta name="twitter:title" content="SpringBoot工程打包">
+<meta name="twitter:description" content="关于在SpringBoot的应用里，最方便的莫过于可以直接把工程打成一个jar/war包，由于内嵌了tomcat，所以可以直接在服务器上启动。而SpringBoot适合前后端分离，所以建议打jar包，在服务器上，通过java -jar xx.jar即可启动。 打包流程1.在pom文件中添加打包插件12345678910111213141516171819202122&amp;lt;!-- 打包spring">
+<meta name="twitter:image" content="https://note.youdao.com/yws/public/resource/deb65d9809f64da2cf633488c0b702bd/xmlnote/9E3857C801964118BBBF329D26499802/8343">
 
 
 
@@ -127,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="https://huangweicai.github.io/2018/10/11/git_use/"/>
+  <link rel="canonical" href="https://huangweicai.github.io/2018/12/30/SpringBoot工程打包/"/>
 
 
 
 
 
-  <title>Git常用命令小结 | Hans' Blog</title>
+  <title>SpringBoot工程打包 | Hans' Blog</title>
   
 
 
@@ -290,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://huangweicai.github.io/2018/10/11/git_use/">
+    <link itemprop="mainEntityOfPage" href="https://huangweicai.github.io/2018/12/30/SpringBoot工程打包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hans">
@@ -307,7 +310,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Git常用命令小结</h2>
+          <h2 class="post-title" itemprop="name headline">SpringBoot工程打包</h2>
         
 
         <div class="post-meta">
@@ -319,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-11T00:35:43+08:00">
-                2018-10-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-30T12:54:33+08:00">
+                2018-12-30
               </time>
             
 
@@ -335,8 +338,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-11T00:48:10+08:00">
-                2018-10-11
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-30T13:18:05+08:00">
+                2018-12-30
               </time>
             
           </span>
@@ -350,8 +353,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/11/git_use/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/11/git_use/" itemprop="commentCount"></span>
+                <a href="/2018/12/30/SpringBoot工程打包/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/30/SpringBoot工程打包/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -359,7 +362,7 @@
 
           
           
-             <span id="/2018/10/11/git_use/" class="leancloud_visitors" data-flag-title="Git常用命令小结">
+             <span id="/2018/12/30/SpringBoot工程打包/" class="leancloud_visitors" data-flag-title="SpringBoot工程打包">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -384,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1k
+                  297
                 </span>
               
 
@@ -400,7 +403,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  1
                 </span>
               
             </div>
@@ -421,17 +424,11 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>平时我们经常使用到git，有些朋友喜欢使用git的窗口界面来操作，我个人也蛮喜欢的。不过git命令是学习git的根本，和机器打交道最近的方式，所以学好git对理解git的工作流是很有帮助的。下面梳理一下本人常用的git操作命令。</p>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="git提交操作流程"><a href="#git提交操作流程" class="headerlink" title="git提交操作流程"></a>git提交操作流程</h4><p>（进入到项目目录中，然后执行如下命令）<br>＃初始化本地仓库<br>git init<br>＃将本地内容添加至git索引中（注意：每次提交最好都执行一下）<br>git add .      （git add –all）<br>＃将索引添加至本地仓库中（日志log，注意新增文件内容需要该命令才能提交到本地仓库，才能push到远程）<br>git commit -m “first commit”    注意：日志不能为空字符串等</p>
-<p>#添加远程仓库路径<br>git remote add origin ssh:<a href="mailto://git@git.infinitus.com.cn" target="_blank" rel="noopener">//git@git.infinitus.com.cn</a>:7999/han/gittestdemo.git<br>＃将本地内容push至远程仓库中<br>git push -u origin master<br>（push之前，确保公钥已经放上去了）</p>
-<h4 id="子分支与主分支master合并流程"><a href="#子分支与主分支master合并流程" class="headerlink" title="子分支与主分支master合并流程"></a>子分支与主分支master合并流程</h4><p>1.首先我们在子分支上开发，完成后提交代码到子分支<br>git add .<br>git commit -m ‘dev’<br>git push -u origin dev<br>2.把分支的代码合并到主分支master上<br>步骤一览：先切换到master上，保险起见先拉取一下远程仓库master，然后再在合master的主分支上合并dev分支，最后把合并成的master分支提交到远程仓库。<br>git checkout master<br>git pull origin master   (同是master分支，pull回来就会自动本地merge)<br>git merge dev<br>git push origin master<br>补充：<br>1.git status可以查看状态<br>2.远程仓库有子分支，也不可以直接拉取子分支，先拉取主分支再切换到子分支<br>3.git hook 在使用git窗口操作，git base命令窗口不会打印内容。<br>4.注意，本地commit的时候存在冲突的情况，即使git push成功，但远程并没有更新到内容。需要把冲突去掉再次重新操作流程。git add .   git commit git push···<br>5.pull master回来时，如果远程仓库没有t1之类的子分支，则本地git branch -a是看不到该子分支的。该命令只是看本地仓库的分支信息。</p>
-<h4 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h4><p>＃查看本地分支<br>git branch<br>＃查看远程分支（好像也包含本地分支）<br>git branch -a<br>＃创建本地分支，并切换到分支（test是分支名称，可替换）<br>git branch test<br>git checkout test<br>注：也可以一次性写法git checkout -b dev<br>＃提交到远程仓库<br>1.git push origin test:remoteTest    本地test分支提交到远程remoteTest分支（如果远程没有则新建该分支）<br>2.git push origin test               本地test分支提交到远程test分支（如果远程没有则新建该分支）<br>（push操作，就算当前分支是test1，也可以直接把test2 push到远程，再push test1都ok）<br>＃从远程拉取分支<br>git pull origin test:test<br>注：如果不写本地分支名称，则默认和远程分支同名，这时命令为：$ git pull origin test</p>
-<p>注意：<br>1.操作git的过程中，在子分支test1中git branch testMerge分支，发现子分支还可以拉取子子分支，test1与testMerge内容一样。</p>
-<p>＃clone远程仓库到指定目录<br>git clone ssh:<a href="mailto://git@git.infinitus.com.cn" target="_blank" rel="noopener">//git@git.infinitus.com.cn</a>:7999/han/gittestdemo.git  “E:\git_workplace\newdemo”<br>（注意：目录需要用””包起来）<br>cd E:</p>
-<p>＃git 删除本地分支<br>git branch -d br<br>＃git 删除远程分支（删除分支与提交分支类似，区别就是在分支名前加上:）<br>git push origin :br  (origin 后面有空格)</p>
-<p>git代码库回滚: 指的是将代码库某分支退回到以前的某个commit id<br>【本地代码库回滚】：<br>git reset –hard commit-id :回滚到commit-id，讲commit-id之后提交的commit都去除<br>git reset –hard HEAD~3：将最近3次的提交回滚</p>
-<h4 id="git配置信息相关"><a href="#git配置信息相关" class="headerlink" title="git配置信息相关"></a>git配置信息相关</h4><p>查看用户名和邮箱地址：<br>git config user.name<br>git config user.email<br>修改用户名和邮箱地址：<br>git config –global user.name  “xxxx”<br>git config –global user.email  “xxxx”</p>
-<p>查看公钥：cat ~/.ssh/id_rsa.pub</p>
+        <h4 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h4><p>在SpringBoot的应用里，最方便的莫过于可以直接把工程打成一个jar/war包，由于内嵌了tomcat，所以可以直接在服务器上启动。而SpringBoot适合前后端分离，所以建议打jar包，在服务器上，通过java -jar xx.jar即可启动。</p>
+<h4 id="打包流程"><a href="#打包流程" class="headerlink" title="打包流程"></a>打包流程</h4><p>1.在pom文件中添加打包插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 打包spring boot应用 --&gt;</span><br><span class="line">&lt;build&gt;</span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;configuration&gt;</span><br><span class="line">                &lt;!--配置入口--&gt;</span><br><span class="line">                &lt;mainClass&gt;com.aaa.bbb.Application&lt;/mainClass&gt;</span><br><span class="line">            &lt;/configuration&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line"></span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;configuration&gt;</span><br><span class="line">                &lt;source&gt;8&lt;/source&gt;</span><br><span class="line">                &lt;target&gt;8&lt;/target&gt;</span><br><span class="line">            &lt;/configuration&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">    &lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2.Application入口类继承SpringBootServletInitializer抽象类，并实现configure方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Application extends SpringBootServletInitializer &#123;</span><br><span class="line">    </span><br><span class="line">//springboot打包需要</span><br><span class="line">@Override</span><br><span class="line">protected SpringApplicationBuilder configure(</span><br><span class="line">        SpringApplicationBuilder builder) &#123;</span><br><span class="line">    return builder.sources(this.getClass());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.执行打包操作<br>在Intellij的最右边点击Maven Project，依次操作，先clean，再install。<br><img src="https://note.youdao.com/yws/public/resource/deb65d9809f64da2cf633488c0b702bd/xmlnote/9E3857C801964118BBBF329D26499802/8343" alt=""></p>
+<p>4.操作完毕后，下面就是SpringBoot打出来的jar包了，快放到服务器上试试吧。<br><img src="https://note.youdao.com/yws/public/resource/deb65d9809f64da2cf633488c0b702bd/xmlnote/FBA518621143446C88C240A3128926F5/8348" alt=""></p>
 
       
     </div>
@@ -485,7 +482,7 @@
 	  </li>
 	  <li class="post-copyright-link">
 		<strong>本文链接：</strong>
-		<a href="/2018/10/11/git_use/" title="Git常用命令小结">2018/10/11/git_use/</a>
+		<a href="/2018/12/30/SpringBoot工程打包/" title="SpringBoot工程打包">2018/12/30/SpringBoot工程打包/</a>
 	  </li>
 	  <li class="post-copyright-license">
 		<strong>版权： </strong>
@@ -498,7 +495,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/SpringBoot/" rel="tag"># SpringBoot</a>
           
         </div>
       
@@ -526,8 +523,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/08/valid_code_study/" rel="next" title="有效代码行数预研方案">
-                <i class="fa fa-chevron-left"></i> 有效代码行数预研方案
+              <a href="/2018/10/21/Android Studio发布项目到Jcenter仓库步骤/" rel="next" title="Android Studio发布项目到Jcenter仓库步骤">
+                <i class="fa fa-chevron-left"></i> Android Studio发布项目到Jcenter仓库步骤
               </a>
             
           </div>
@@ -536,8 +533,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/21/sendto_jcenter/" rel="prev" title="Android Studio发布项目到Jcenter仓库步骤">
-                Android Studio发布项目到Jcenter仓库步骤 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/30/保持公司电脑不锁屏技巧/" rel="prev" title="保持公司电脑不锁屏技巧">
+                保持公司电脑不锁屏技巧 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -699,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git提交操作流程"><span class="nav-number">2.1.</span> <span class="nav-text">git提交操作流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子分支与主分支master合并流程"><span class="nav-number">2.2.</span> <span class="nav-text">子分支与主分支master合并流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git常用命令"><span class="nav-number">2.3.</span> <span class="nav-text">git常用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git配置信息相关"><span class="nav-number">2.4.</span> <span class="nav-text">git配置信息相关</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#关于"><span class="nav-number">1.</span> <span class="nav-text">关于</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打包流程"><span class="nav-number">2.</span> <span class="nav-text">打包流程</span></a></li></ol></div>
             
 
           </div>
