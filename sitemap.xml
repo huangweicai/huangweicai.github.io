@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://huangweicai.github.io/about/index.html</loc>
+    
+    <lastmod>2019-01-13T08:58:38.610Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://huangweicai.github.io/2019/01/12/Hexo+DaoVoice%E5%AE%9E%E7%8E%B0%E7%BD%91%E9%A1%B5%E5%9C%A8%E7%BA%BF%E9%80%9A%E8%AE%AF%E5%8A%9F%E8%83%BD/</loc>
     
     <lastmod>2019-01-12T12:52:21.821Z</lastmod>
@@ -131,13 +138,6 @@
     <loc>https://huangweicai.github.io/categories/index.html</loc>
     
     <lastmod>2018-09-22T16:23:27.167Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://huangweicai.github.io/about/index.html</loc>
-    
-    <lastmod>2018-09-22T16:03:11.643Z</lastmod>
     
   </url>
   
