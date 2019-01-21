@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="shell," />
+  <meta name="keywords" content="git,shell,hooks," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 <meta name="description" content="前言公司这边其实已经使用sonar对代码进行了统计，但需求想要更加明确的统计每个user单独的代码量，以便对该user的工作质量进行评估。sonar目前只有对整个目录文件的代码行数统计，对于git merge之类的代码没有区别得很细，也就是说不断merge别人的代码也会被统计到当前提交的user上，而我们是需要明确每个user具体提交了多少代码量，然后下面是针对有效代码行数预研的方案及试错，有需要">
-<meta name="keywords" content="shell">
+<meta name="keywords" content="git,shell,hooks">
 <meta property="og:type" content="article">
 <meta property="og:title" content="有效代码行数预研方案">
 <meta property="og:url" content="https://huangweicai.github.io/2018/10/08/有效代码行数预研方案/index.html">
@@ -109,7 +109,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2405826-2e89fa448a55a652.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2405826-3de3004408ae19f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2405826-d837267d65267512.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-01-13T14:53:51.217Z">
+<meta property="og:updated_time" content="2019-01-21T12:17:17.591Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有效代码行数预研方案">
 <meta name="twitter:description" content="前言公司这边其实已经使用sonar对代码进行了统计，但需求想要更加明确的统计每个user单独的代码量，以便对该user的工作质量进行评估。sonar目前只有对整个目录文件的代码行数统计，对于git merge之类的代码没有区别得很细，也就是说不断merge别人的代码也会被统计到当前提交的user上，而我们是需要明确每个user具体提交了多少代码量，然后下面是针对有效代码行数预研的方案及试错，有需要">
@@ -388,8 +388,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-01-13T22:53:51+08:00">
-                2019-01-13
+              <time title="更新于" itemprop="dateModified" datetime="2019-01-21T20:17:17+08:00">
+                2019-01-21
               </time>
             
           </span>
@@ -601,7 +601,11 @@ git blame
       
         <div class="post-tags">
           
+            <a href="/tags/git/" rel="tag"># git</a>
+          
             <a href="/tags/shell/" rel="tag"># shell</a>
+          
+            <a href="/tags/hooks/" rel="tag"># hooks</a>
           
         </div>
       
@@ -725,7 +729,7 @@ git blame
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -736,7 +740,7 @@ git blame
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -747,7 +751,7 @@ git blame
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -842,7 +846,7 @@ git blame
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.8k</span>
+    <span title="Site words total count">14.6k</span>
   
 </div>
 
@@ -1552,13 +1556,10 @@ git blame
 
   
   <!-- 页面点击小红心，在末尾添加，避免找不到 -->
-  <!-- <script type="text/javascript" src="/js/src/love.js"></script> -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
   
   <!-- 页面点击爆炸效果 -->
-  
-   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
-   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
-   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  <!--  -->
 
 </body>
 </html>

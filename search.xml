@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SpringBoot介绍及常用的搭建方式]]></title>
+    <url>%2F2019%2F01%2F21%2FSpringBoot%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%B8%B8%E7%94%A8%E7%9A%84%E6%90%AD%E5%BB%BA%E6%96%B9%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[SpringBoot简介Spring Boot是Spring社区发布的一个开源项目，旨在帮助开发者快速并且更简单的构建项目。它使用习惯优于配置的理念让你的项目快速运行起来，使用Spring Boot很容易创建一个独立运行（运行jar，内置Servlet容器，Tomcat、jetty）、准生产级别的基于Spring框架的项目，使用SpringBoot你可以不用或者只需要很少的配置文件。 SpringBoot核心功能 独立运行的Spring项目：可以以jar包形式独立运行，通过java -jar xx.jar即可运行。 内嵌Servlet容器：可以选择内嵌Tomcat、Jetty等。 提供starter简化maven配置：一个maven项目，使用了spring-boot-starter-web时，会自动加载Spring Boot的依赖包。 自动配置Spring：Spring。 Boot会根据在类路径中的jar包、类，为jar包中的类自动配置Bean。 准生产的应用监控：提供基于http、ssh、telnet对运行时的项目进行监控。 无代码生成和xml配置：主要通过条件注解来实现。 SpringBoot项目搭建这里使用maven进行项目搭建，有几种搭建方式1、http://start.spring.io/，填写相关的项目信息、jdk版本等，就会生成一个maven项目的压缩包，下载解压导入IDE就可以。 2、IDE下直接创建，推荐使用STS(Spring Tool Suite)、IntelliJ IDEA均支持直接搭建，STS是Spring基于eclipse进行二次开发的工具。 Spring Tool Suite ：新建Spring Initializr项目,填写项目信息和选择技术，将项目设置成maven项目。 IntelliJ IDEA：新建Spring Starter project,填写项目信息和选择技术完成maven工程创建。 3、Spring Boot CLI工具，使用命令创建。 4、手工构建maven项目\任意IDE新建空maven项目\修改pom.xml添加Spring Boot的父级依赖Spring-boot-starter-parent，添加之后这个项目就是一个Spring Boot项目了。 项目搭建案例案例一：通过IDE直接生成SpringBoot项目\1.Create New Project 新建项目 2.选择新建Spring Initializr项目 3.填入Group和Artifact 4.默认Core即可 5.Finish，即创建完毕SpringBoot项目 6.最终效果如下 案例二：手工构建maven项目并通过修改pom.xml，增加SpringBoot配置，进而使得项目变成SpringBoot项目\ 1.创建Maven项目 2.填入Group和Artifact 3.Finish，创建完毕Maven项目 4.修改Maven项目pom.xml文件，添加SpringBoot配置 &lt;project标签下，增加父级依赖Spring-boot-starter-parent123456&lt;parent&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt; &lt;version&gt;2.1.2.RELEASE&lt;/version&gt; &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;&lt;/parent&gt; 补充：Spring-boot-starter-parent是一个特殊的starter，用来提供相关的maven默认依赖，使用之后，常用的包依赖可以省略version标签。 5.增加web支持123456&lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;version&gt;RELEASE&lt;/version&gt; &lt;scope&gt;compile&lt;/scope&gt;&lt;/dependency&gt; 6.增加编译插件12345678&lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt; &lt;/plugin&gt; &lt;/plugins&gt;&lt;/build&gt; 6.新建SpringbootApplication类，并加入@SpringBootApplication注解，代表开启Spring Boot自动配置12345678910111213@RestController@SpringBootApplicationpublic class SpringbootApplication &#123; public static void main(String[] args) &#123; SpringApplication.run(SpringbootApplication.class, args); &#125; @RequestMapping(&quot;/&quot;) String index()&#123; return &quot;Hello My Spring Boot Demo&quot;; &#125;&#125; 7.测试效果\启动项目，浏览器输入http://localhost:8080]]></content>
+      <categories>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>springboot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[SpringBoot邮件发送css样式在手机邮件中显示失效问题]]></title>
     <url>%2F2019%2F01%2F19%2FSpringBoot%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81css%E6%A0%B7%E5%BC%8F%E5%9C%A8%E6%89%8B%E6%9C%BA%E9%82%AE%E4%BB%B6%E4%B8%AD%E6%98%BE%E7%A4%BA%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[关于下面分享一个本人在开发邮件服务遇到的一个小插曲，在使用SpringBoot的邮件发送FreeMarker模板时，发现在模板上设置的style样式，在手机端邮件显示部分会失效，例如字体颜色的样式失效等。针对这种情况，这里分享一下我的一个处理方式，仅供参考，不一定是最佳的解决方式。 具体步骤1.注释掉顶部style的与颜色相关的样式，测试貌似宽度，居中这些生效。 2.在具体需要设置颜色的table、tr或者tb中，直接设置style样式。这样子，在手机上显示，颜色等就生效了。 小结由于公司工作，平时工作通知沟通，都是会通过电脑的outlook邮件。电脑端上的outlook对style样式支持比较好，无需上面的处理能正常显示，只是同样的做法在手机端显示支持就显得不友好，样式没生效。凡是遇到这种样式不生效的情况，可以尝试直接在需要设置样式的地方，如tr或tb上，直接设置样式，多测试几次。]]></content>
       <categories>
-        <category>后端</category>
+        <category>SpringBoot</category>
       </categories>
       <tags>
-        <tag>SpringBoot</tag>
+        <tag>springboot</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Hexo增加APlayer音乐播放功能]]></title>
     <url>%2F2019%2F01%2F13%2FHexo%E5%A2%9E%E5%8A%A0APlayer%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%8A%9F%E8%83%BD%2F</url>
     <content type="text"><![CDATA[关于在个人的站点上，如果有音乐播放的功能，那么读者可以一遍阅读文章，一边欣赏音乐，是一件很愉快的事情。下面就以本站点为案例，分享增加音乐播放功能的步骤。 具体操作1.先上效果图 2.准备APlayer，下载github压缩包，解压后把dist文件夹复制到\themes\next\source目录中。 在dist目录里，新建music.js文件，并把如下代码粘贴进去。12345678910111213141516171819202122232425262728293031const ap = new APlayer(&#123; container: document.getElementById(&apos;aplayer&apos;), fixed: true, autoplay: false, audio: [ &#123; name: &quot;你一定要幸福&quot;, artist: &apos;简弘亦&apos;, url: &apos;http://www.ytmp3.cn/down/51689.mp3&apos;, cover: &apos;http://img.ytmp3.cn/image/52.jpg&apos;, &#125;, &#123; name: &apos;一百万个可能(Live)&apos;, artist: &apos;摩登兄弟&apos;, url: &apos;http://www.ytmp3.cn/down/52772.mp3&apos;, cover: &apos;http://img.ytmp3.cn/image/53.jpg&apos;, &#125;, &#123; name: &apos;The Rose&apos;, artist: &apos;Westlife&apos;, url: &apos;http://www.ytmp3.cn/down/56694.mp3&apos;, cover: &apos;http://img.ytmp3.cn/image/51.jpg&apos;, &#125;, &#123; name: &apos;In The Eyes&apos;, artist: &apos;江映东&apos;, url: &apos;http://www.ytmp3.cn/down/53053.mp3&apos;, cover: &apos;http://img.ytmp3.cn/image/10.jpg&apos;, &#125; ]&#125;); 3.在\themes\next\layout_layout.swig文件中，里新增如下代码：12345&lt;!-- 音频播放 --&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/dist/APlayer.min.css&quot;&gt;&lt;div id=&quot;aplayer&quot;&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;/dist/APlayer.min.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;/dist/music.js&quot;&gt;&lt;/script&gt; 重新发布就可以看到效果了。 4.补充Aplayer 中文文档mp3音乐外链网站]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
       <tags>
         <tag>hexo</tag>
       </tags>
@@ -45,6 +59,9 @@
     <title><![CDATA[Hexo使用不蒜子统计功能失效问题解决]]></title>
     <url>%2F2019%2F01%2F12%2FHexo%E4%BD%BF%E7%94%A8%E4%B8%8D%E8%92%9C%E5%AD%90%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%2F</url>
     <content type="text"><![CDATA[关于比较早的时候使用next主题，想要开启站点统计功能（访客、总访问量），只需要找到_config.yml配置文件，把busuanzi_count的enable设置为true即可。但是近期，大概是2018年10月份左右，这个不蒜子的统计功能就失效了。查阅了不蒜子官方的说法， “因七牛强制过期『dn-lbstatics.qbox.me』域名，与客服沟通无果，只能更换域名到『busuanzi.ibruce.info』！” 具体操作1.找到原来不蒜子的域名文件，并替换掉旧的域名。文件路径：\themes\next\layout_third-party\analytics\busuanzi-counter.swig，只需要替换src对应的域名即可，如下是替换后的域名。1&lt;script async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt; 2.注意：_config.yml配置文件busuanzi_count是需要打开的。我这里是已经开启过了，只是域名失效了而已。如果默认没有打开，可以参考如下配置。配置文件路径：\themes\next_config.yml1234567891011121314151617# Show PV/UV of the website/page with busuanzi.# Get more information on http://ibruce.info/2015/04/04/busuanzi/busuanzi_count: # count values only if the other configs are false enable: true # custom uv span for the whole site site_uv: true site_uv_header: 访客数 site_uv_footer: 人 # custom pv span for the whole site site_pv: true site_pv_header: 总访问量 site_pv_footer: 次 # custom pv span for one page only page_pv: true page_pv_header: &lt;i class=&quot;fa fa-file-o&quot;&gt;&lt;/i&gt; 阅读数 page_pv_footer:]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
       <tags>
         <tag>hexo</tag>
       </tags>
@@ -68,7 +85,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
+        <tag>sql</tag>
+        <tag>关联查询</tag>
       </tags>
   </entry>
   <entry>
@@ -79,7 +97,8 @@
         <category>Html</category>
       </categories>
       <tags>
-        <tag>other</tag>
+        <tag>html</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -87,10 +106,10 @@
     <url>%2F2019%2F01%2F08%2FSpringBoot%2BJpa%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[关于有时候，随着业务的发展，项目关联的数据来源会变得越来越复杂，使用的数据库会比较分散，这个时候就会采用多数据源的方式来获取数据。另外，多数据源也有其他好处，例如分布式数据库的读写分离，集成多种数据库等等。下面分享我在实际项目中配置多数据源的案例。 步骤1.application.yml文件中，配置数据库源。这里primary是主库，secondary是从库。123456789101112131415161718192021222324252627server: port: 8089# 多数据源配置#primaryspring: primary: datasource: url: jdbc:mysql://127.0.0.1:3306/database1?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Asia/Shanghai username: root password: ****** driver-class-name: com.mysql.jdbc.Driver #secondary secondary: datasource: url: jdbc:mysql://127.0.0.1:3306/database1?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Asia/Shanghai username: root password: ****** driver-class-name: com.mysql.jdbc.Driver jpa: hibernate: primary-dialect: org.hibernate.dialect.MySQL5Dialect secondary-dialect: org.hibernate.dialect.MySQL5Dialect open-in-view: true show-sql: true 2.创建一个Spring配置类，其中spring.primary.datasource的路径参考yml文件的配置。12345678910111213141516171819@Configurationpublic class DataSourceConfig &#123; @Bean(name = &quot;primaryDataSource&quot;) @Qualifier(&quot;primaryDataSource&quot;) @ConfigurationProperties(prefix=&quot;spring.primary.datasource&quot;) public DataSource primaryDataSource() &#123; return DataSourceBuilder.create().build(); &#125; @Bean(name = &quot;secondaryDataSource&quot;) @Qualifier(&quot;secondaryDataSource&quot;) @Primary @ConfigurationProperties(prefix=&quot;spring.secondary.datasource&quot;) public DataSource secondaryDataSource() &#123; return DataSourceBuilder.create().build(); &#125;&#125; 3.分别创建主库、从库的配置类。注意：entity包和dao包的配置，以及@Primary注解指定主库。 主库配置类：123456789101112131415161718192021222324252627282930313233343536373839404142@Configuration@EnableTransactionManagement@EnableJpaRepositories( entityManagerFactoryRef = &quot;entityManagerFactoryPrimary&quot;, transactionManagerRef = &quot;transactionManagerPrimary&quot;, basePackages = &#123;&quot;com.infinitus.yunxiao_data.dao.primary&quot;&#125;) //设置Repository所在位置public class PrimaryConfig &#123; @Autowired private JpaProperties jpaProperties; @Autowired @Qualifier(&quot;primaryDataSource&quot;) private DataSource primaryDataSource; @Primary @Bean(name = &quot;entityManagerPrimary&quot;) public EntityManager entityManager(EntityManagerFactoryBuilder builder) &#123; return entityManagerFactoryPrimary(builder).getObject().createEntityManager(); &#125; @Primary @Bean(name = &quot;entityManagerFactoryPrimary&quot;) public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary(EntityManagerFactoryBuilder builder) &#123; return builder .dataSource(primaryDataSource) .properties(getVendorProperties(primaryDataSource)) .packages(&quot;com.infinitus.yunxiao_data.entity.primary&quot;) //设置实体类所在位置 .persistenceUnit(&quot;primaryPersistenceUnit&quot;) .build(); &#125; private Map getVendorProperties(DataSource dataSource) &#123; return jpaProperties.getHibernateProperties(dataSource); &#125; @Primary @Bean(name = &quot;transactionManagerPrimary&quot;) public PlatformTransactionManager transactionManagerPrimary(EntityManagerFactoryBuilder builder) &#123; return new JpaTransactionManager(entityManagerFactoryPrimary(builder).getObject()); &#125;&#125; 从库的配置类：12345678910111213141516171819202122232425262728293031323334353637383940@Configuration@EnableTransactionManagement@EnableJpaRepositories( entityManagerFactoryRef = &quot;entityManagerFactorySecondary&quot;, transactionManagerRef = &quot;transactionManagerSecondary&quot;, basePackages = &#123;&quot;com.infinitus.yunxiao_data.dao.secondary&quot;&#125;) //设置Repository所在位置public class SecondaryConfig &#123; @Autowired private JpaProperties jpaProperties; @Autowired @Qualifier(&quot;secondaryDataSource&quot;) private DataSource secondaryDataSource; @Bean(name = &quot;entityManagerSecondary&quot;) public EntityManager entityManager(EntityManagerFactoryBuilder builder) &#123; return entityManagerFactorySecondary(builder).getObject().createEntityManager(); &#125; @Bean(name = &quot;entityManagerFactorySecondary&quot;) public LocalContainerEntityManagerFactoryBean entityManagerFactorySecondary(EntityManagerFactoryBuilder builder) &#123; return builder .dataSource(secondaryDataSource) .properties(getVendorProperties(secondaryDataSource)) .packages(&quot;com.infinitus.yunxiao_data.entity.secondary&quot;) //设置实体类所在位置 .persistenceUnit(&quot;primaryPersistenceUnit&quot;) .build(); &#125; private Map getVendorProperties(DataSource dataSource) &#123; return jpaProperties.getHibernateProperties(dataSource); &#125; @Bean(name = &quot;transactionManagerSecondary&quot;) PlatformTransactionManager transactionManagerSecondary(EntityManagerFactoryBuilder builder) &#123; return new JpaTransactionManager(entityManagerFactorySecondary(builder).getObject()); &#125;&#125; 4.分别创建主、从库dao类。主dao：1234567@Repositorypublic interface PrimaryRepository extends JpaRepository&lt;PrimaryEntity, Long&gt; &#123; @Query(value = &quot;SELECT p FROM PrimaryEntity p&quot;) List&lt;PrimaryEntity&gt; queryList();&#125; 从dao：1234567@Repositorypublic interface SecondaryRepository extends JpaRepository&lt;SecondaryEntity, Long&gt; &#123; @Query(value = &quot;SELECT p FROM SecondaryEntity p&quot;) List&lt;SecondaryEntity&gt; queryList();&#125; 5.分别创建主、从库entity类。主entity：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455@Entity@Table(name = &quot;holiday_scheme&quot;)@EntityListeners(AuditingEntityListener.class)public class PrimaryEntity extends AbstractPersistable&lt;Long&gt; &#123; @Column(name = &quot;date&quot;) public String date; @Column(name = &quot;hour&quot;) public String hour; @Column(name = &quot;holiday&quot;) public String holiday; @Column(name = &quot;holiday_explain&quot;) public String holiday_explain; public String getDate() &#123; return date; &#125; public void setDate(String date) &#123; this.date = date; &#125; public String getHour() &#123; return hour; &#125; public void setHour(String hour) &#123; this.hour = hour; &#125; public String getHoliday() &#123; return holiday; &#125; public void setHoliday(String holiday) &#123; this.holiday = holiday; &#125; public String getHoliday_explain() &#123; return holiday_explain; &#125; public void setHoliday_explain(String holiday_explain) &#123; this.holiday_explain = holiday_explain; &#125; @Override public String toString() &#123; return &quot;PrimaryEntity&#123;&quot; + &quot;date=&apos;&quot; + date + &apos;\&apos;&apos; + &quot;, hour=&apos;&quot; + hour + &apos;\&apos;&apos; + &quot;, holiday=&apos;&quot; + holiday + &apos;\&apos;&apos; + &quot;, holiday_explain=&apos;&quot; + holiday_explain + &apos;\&apos;&apos; + &apos;&#125;&apos;; &#125;&#125; 从entity：123456789101112131415161718192021222324252627282930313233343536373839404142434445@Entity@Table(name = &quot;active_dashboards&quot;)@EntityListeners(AuditingEntityListener.class)public class SecondaryEntity extends AbstractPersistable&lt;Long&gt; &#123; @Column(name = &quot;dashboard_id&quot;) public String dashboard_id; @Column(name = &quot;user_id&quot;) public String user_id; @Column(name = &quot;order_index&quot;) public String order_index; public String getDashboard_id() &#123; return dashboard_id; &#125; public void setDashboard_id(String dashboard_id) &#123; this.dashboard_id = dashboard_id; &#125; public String getUser_id() &#123; return user_id; &#125; public void setUser_id(String user_id) &#123; this.user_id = user_id; &#125; public String getOrder_index() &#123; return order_index; &#125; public void setOrder_index(String order_index) &#123; this.order_index = order_index; &#125; @Override public String toString() &#123; return &quot;SecondaryEntity&#123;&quot; + &quot;dashboard_id=&apos;&quot; + dashboard_id + &apos;\&apos;&apos; + &quot;, user_id=&apos;&quot; + user_id + &apos;\&apos;&apos; + &quot;, order_index=&apos;&quot; + order_index + &apos;\&apos;&apos; + &apos;&#125;&apos;; &#125;&#125; 6.controller请求获取不同数据库的数据。1234567891011121314151617181920212223@RestController@RequestMapping(&quot;/database&quot;)public class MailController &#123; private final Logger logger = LoggerFactory.getLogger(this.getClass()); @Autowired PrimaryRepository primaryRepository; @Autowired SecondaryRepository secondaryRepository; @RequestMapping(&quot;/primary&quot;) @ResponseBody public String primary() &#123; return primaryRepository.queryList().toString(); &#125; @RequestMapping(&quot;/secondary&quot;) @ResponseBody public String secondary() &#123; return secondaryRepository.queryList().toString(); &#125;&#125; 注意下面提两个在配置多数据源时遇到的坑点，一不注意就掉坑了。1.Application类不需要配置@EnableJpaRepositories注解，会报如下错误。1A component required a bean named &apos;entityManagerFactory&apos; that could not be f 2.注意检查dao类，获取数据的方法上格式是否正确，有没有某个字段是表中不存在的，避免启动异常。如下，SecondaryEntity表中是不存在job_name字段的，所以注释掉才能启动成功等。12//@Query(value = &quot;SELECT p FROM SecondaryEntity p where p.job_name = ?1&quot;)//List&lt;SecondaryEntity&gt; queryOdcRecord(String job_name);]]></content>
       <categories>
-        <category>后端</category>
+        <category>SpringBoot</category>
       </categories>
       <tags>
-        <tag>SpringBoot</tag>
+        <tag>springboot</tag>
       </tags>
   </entry>
   <entry>
@@ -98,10 +117,10 @@
     <url>%2F2019%2F01%2F06%2Fapplication.properties%E5%92%8Capplication.yml%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[关于一般上来说，当我们创建一个SpringBoot项目时，IDE会默认帮我们创建一个application.properties配置文件。有些朋友习惯把.properties文件改成.yml文件。那么这两种文件类型有什么区别呢？ 区别1.内容格式比较：.properties文件，通过.来连接，通过=来赋值，结构上，没有分层的感觉，但比较直接。.yml文件，通过：来分层，结构上，有比较明显的层次感，最后key赋值的：后需要留一个空格 2.执行顺序如果工程中同时存在application.properties文件和 application.yml文件，yml文件会先加载，而后加载的properties文件会覆盖yml文件。所以建议工程中，只使用其中一种类型的文件即可。 案例application.properties：1234567server.port=8081 spring.datasource.type=org.apache.tomcat.jdbc.pool.DataSourcespring.datasource.url=jdbc:mysql://aliyuncs.com:3306/database?useUnicode=true&amp;zeroDateTimeBehavior=convertToNull&amp;autoReconnect=truespring.datasource.username=rootspring.datasource.password=******spring.datasource.driver-class-name=com.mysql.jdbc.Driver application.yml：1234567891011server: port: 8082 spring: datasource: name: test url: jdbc:mysql://127.0.0.1:3306/database username: root password: ****** type: com.alibaba.druid.pool.DruidDataSource driver-class-name: com.mysql.jdbc.Driver]]></content>
       <categories>
-        <category>后端</category>
+        <category>SpringBoot</category>
       </categories>
       <tags>
-        <tag>SpringBoot</tag>
+        <tag>springboot</tag>
       </tags>
   </entry>
   <entry>
@@ -109,10 +128,10 @@
     <url>%2F2019%2F01%2F06%2FSpringBoot%E9%A1%B9%E7%9B%AE%E7%9A%84jar%E5%8C%85%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%90%AF%E5%8A%A8%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF%2F</url>
     <content type="text"><![CDATA[关于一般上来说，我们在服务器上启动一个jar，最简单的方式就是java -jar xx.jar，虽然这种方式简单但有时候我们的场景需要更多，例如常驻后台运行，在命令行窗口关闭的时候不中断项目，指定端口，并且输出日志到文件中等。所以这个时候我们通常会采用脚本启动和关闭项目，方便项目的统一管理。 脚本启动和关闭的案例1.启动脚本123nohup java -jar ../webapp/xxx.jar --server.port=9002 &gt;&gt; ../logs/xxx.log &amp;tail -f ../logs/xxx.log 2.关闭脚本12345678910pid=`ps -ef|grep java|grep xxx.jar |awk &apos;&#123;print $2&#125;&apos;`if [ -z $pid ]; then echo &apos;app not runing&apos;else echo &apos;kill pid &apos; $pid kill $pid sleep 5 ps -ef|grep javafi 3.最后一步，执行脚本。（cd到脚本目录并执行）1sh xxx.sh 补充1.命令后加&amp;符号，可以使命令在后台执行。2.tail -f 实时查看日志文件。3.如果要先关闭项目再启动，尽量不要使用Ctrl+z退出命令行窗口的当前状态，最好新开一个命令行窗口，然后执行关闭脚本，再执行启动脚本。这样操作，可以避免应用莫名其妙没有关闭到的情况，反复执行关闭脚本却没有杀死应用进程的奇怪问题，需要杀多次。]]></content>
       <categories>
-        <category>后端</category>
+        <category>SpringBoot</category>
       </categories>
       <tags>
-        <tag>SpringBoot</tag>
+        <tag>springboot</tag>
       </tags>
   </entry>
   <entry>
@@ -124,6 +143,7 @@
       </categories>
       <tags>
         <tag>excel</tag>
+        <tag>vb</tag>
       </tags>
   </entry>
   <entry>
@@ -134,7 +154,7 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>other</tag>
+        <tag>不锁屏</tag>
       </tags>
   </entry>
   <entry>
@@ -142,19 +162,22 @@
     <url>%2F2018%2F12%2F30%2FSpringBoot%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85%2F</url>
     <content type="text"><![CDATA[关于在SpringBoot的应用里，最方便的莫过于可以直接把工程打成一个jar/war包，由于内嵌了tomcat，所以可以直接在服务器上启动。而SpringBoot适合前后端分离，所以建议打jar包，在服务器上，通过java -jar xx.jar即可启动。 打包流程1.在pom文件中添加打包插件12345678910111213141516171819202122&lt;!-- 打包spring boot应用 --&gt;&lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt; &lt;configuration&gt; &lt;!--配置入口--&gt; &lt;mainClass&gt;com.aaa.bbb.Application&lt;/mainClass&gt; &lt;/configuration&gt; &lt;/plugin&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt; &lt;configuration&gt; &lt;source&gt;8&lt;/source&gt; &lt;target&gt;8&lt;/target&gt; &lt;/configuration&gt; &lt;/plugin&gt; &lt;/plugins&gt;&lt;/build&gt; 2.Application入口类继承SpringBootServletInitializer抽象类，并实现configure方法。12345678public class Application extends SpringBootServletInitializer &#123; //springboot打包需要@Overrideprotected SpringApplicationBuilder configure( SpringApplicationBuilder builder) &#123; return builder.sources(this.getClass());&#125; 3.执行打包操作在Intellij的最右边点击Maven Project，依次操作，先clean，再install。 4.操作完毕后，下面就是SpringBoot打出来的jar包了，快放到服务器上试试吧。]]></content>
       <categories>
-        <category>后端</category>
+        <category>SpringBoot</category>
       </categories>
       <tags>
-        <tag>SpringBoot</tag>
+        <tag>springboot</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Android Studio发布项目到Jcenter仓库步骤]]></title>
     <url>%2F2018%2F10%2F21%2FAndroid%20Studio%E5%8F%91%E5%B8%83%E9%A1%B9%E7%9B%AE%E5%88%B0Jcenter%E4%BB%93%E5%BA%93%E6%AD%A5%E9%AA%A4%2F</url>
     <content type="text"><![CDATA[前言Android Studio中把项目的lib库提交到Jcenter仓库中，需要使用到Bintray，Bintray是jCenter的提供商，他支持上传lib到多个平台，jCenter只是众多平台中的一个，形象的说jCenter是位于某地的仓库，Bintray是送货的卡车，你写的库就是货了。 注册准备1.在Bintray上注册账号，并创建package。注册bintray，注意：注册时尽量使用国外的邮箱，避免接收不到验证码。例如我使用雅虎邮箱。 2.完成注册之后，登录网站，然后点击maven。 3.点击Add New Package，为我们的library创建一个新的package。 4.假设你已经注册账你并按照上面步骤操作，或者使用我提供的账号，登陆成功后会出现如下界面，点击maven进入该仓库，并点击Add New Package创建新的包。 5.填写package相关信息，如下： Android Studio配置部分6.操作AS项目，配置相关信息，命令行操作lib包上传。Android Studio安装上传Bintray插件和填写相关信息：（下面选用我测试通过并且操作路径最短的方式）在项目的根build文件中补充如下标红内容这是根build源文件：123456789101112131415161718192021222324252627// Top-level build file where you can add configuration options common to all sub-projects/modules.buildscript &#123; repositories &#123;google()jcenter()&#125;dependencies &#123;classpath &apos;com.android.tools.build:gradle:3.1.3&apos; classpath &apos;com.novoda:bintray-release:+&apos; // 新增// NOTE: Do not place your application dependencies here; they belong// in the individual module build.gradle files &#125;&#125;allprojects &#123;repositories &#123;google()jcenter()&#125; tasks.withType(Javadoc) &#123; // 新增 options.addStringOption(&apos;Xdoclint:none&apos;, &apos;-quiet&apos;) options.addStringOption(&apos;encoding&apos;, &apos;UTF-8&apos;)&#125;&#125;task clean(type: Delete) &#123;delete rootProject.buildDir&#125; 7.然后在lib的build文件中补充如下内容：这是lib的源build文件：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071`apply plugin: ``&apos;com.android.library&apos;``apply plugin: ``&apos;com.novoda.bintray-release&apos;` `// 新增``android &#123;``compileSdkVersion ``28``defaultConfig &#123;``minSdkVersion ``15``targetSdkVersion ``28``versionCode ``2``versionName ``&quot;1.0.2&quot;``testInstrumentationRunner ``&quot;android.support.test.runner.AndroidJUnitRunner&quot;``&#125;``buildTypes &#123;``release &#123;``minifyEnabled ``false``proguardFiles getDefaultProguardFile(``&apos;proguard-android.txt&apos;``), ``&apos;proguard-rules.pro&apos;``&#125;``&#125;``lintOptions &#123; ``// 新增``abortOnError ``false``&#125;``&#125;``dependencies &#123;``implementation fileTree(dir: ``&apos;libs&apos;``, include: [``&apos;*.jar&apos;``])``implementation ``&apos;com.android.support:appcompat-v7:28.0.0-rc02&apos;``testImplementation ``&apos;junit:junit:4.12&apos;``androidTestImplementation ``&apos;com.android.support.test:runner:1.0.2&apos;``androidTestImplementation ``&apos;com.android.support.test.espresso:espresso-core:3.0.2&apos;``&#125;``publish &#123; ``// 新增``userOrg = ``&apos;huangweicai&apos;` `// 注册bintray时的username``groupId = ``&apos;com.infinitus_demo_lib&apos;` `// 项目包名``artifactId = ``&apos;infinitus_demo_lib&apos;` `// 项目名``publishVersion = ``&apos;1.0.2&apos;` `// 发布版本号``desc = ``&apos;Summarize the tools or methods commonly used in routine development&apos;` `// 项目描述，可选项``website = ``&apos;[https://github.com/huangweicai/infinitus_demo_lib&apos;](https://github.com/huangweicai/infinitus_demo_lib&apos;)` `// 项目站点，可选项``&#125;` 8.在Android Studio的命令行窗口依次输入如下命令：123gradlew generatePomFileForReleasePublicationgradlew publishReleasePublicationToMavenLocalgradlew bintrayUpload -PbintrayUser=xxx -PbintrayKey=xxx -PdryRun=false 其中，PbintrayUser是Bintray的用户名，PbintrayKey是Bintray的API Key。（API Key在注册成功后，可以在修改信息的界面找到，最好在第一次注册成功后就记录好）等待执行，看到BUILD SUCCESSFUL说明上传Bintray成功。 9.进入Bintray，可以找到我们上传的包，在页面的左下角看到maven地址说明上传内容正确，第一次在页面的右下角会看到add to jcenter，需要我们手动点击一下这个add to jcenter按钮，然后等待lib包审核通过后，我们就可以引用jcenter上的包了。以上就是Android Studio打包上传到Jcenter的完整流程。 最后测试AS引入implementation ‘com.infinitus_demo_lib:infinitus_demo_lib:1.0.2’，代码中调用演示工具类TestUtil.test(context);查看吐司是否提示，提示成功说明已经成功发布并引入jcenter包。]]></content>
+      <categories>
+        <category>Android Studio</category>
+      </categories>
       <tags>
         <tag>jcenter</tag>
-        <tag>Android Studio</tag>
+        <tag>android studio</tag>
       </tags>
   </entry>
   <entry>
@@ -176,7 +199,9 @@
         <category>方案</category>
       </categories>
       <tags>
+        <tag>git</tag>
         <tag>shell</tag>
+        <tag>hooks</tag>
       </tags>
   </entry>
   <entry>
