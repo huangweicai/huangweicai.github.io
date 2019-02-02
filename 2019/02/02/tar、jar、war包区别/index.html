@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="前言:在部署包的时候，会经常看到很多类型的包，其中常见的tar包、jar包、war包等，那么这三种类型的包有什么区别？ 区别：tar包：linux打包工具生成的包通常用tar作为后缀，tar包不一定有压缩，其实可以压缩，也可以不压缩，例如xxx.tar.gz，就表示这个tar包是压缩的，并且使用的压缩算法是GNU ZIP，而xxx.tar.bz2就表示这个包使用了bzip2算法进行压缩，当然这样的">
+<meta name="description" content="前言:在部署包的时候，经常会看到很多类型的包，其中常见的有tar包、jar包、war包等，那么这三种类型的包有什么区别？ 区别：tar包：linux打包工具生成的包通常用tar作为后缀，tar包不一定有压缩，其实可以压缩，也可以不压缩，例如xxx.tar.gz，就表示这个tar包是压缩的，并且使用的压缩算法是GNU ZIP，而xxx.tar.bz2就表示这个包使用了bzip2算法进行压缩，当然这样">
 <meta name="keywords" content="tar,jar,war">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tar、jar、war包区别">
 <meta property="og:url" content="https://huangweicai.github.io/2019/02/02/tar、jar、war包区别/index.html">
 <meta property="og:site_name" content="Hans&#39; Blog">
-<meta property="og:description" content="前言:在部署包的时候，会经常看到很多类型的包，其中常见的tar包、jar包、war包等，那么这三种类型的包有什么区别？ 区别：tar包：linux打包工具生成的包通常用tar作为后缀，tar包不一定有压缩，其实可以压缩，也可以不压缩，例如xxx.tar.gz，就表示这个tar包是压缩的，并且使用的压缩算法是GNU ZIP，而xxx.tar.bz2就表示这个包使用了bzip2算法进行压缩，当然这样的">
+<meta property="og:description" content="前言:在部署包的时候，经常会看到很多类型的包，其中常见的有tar包、jar包、war包等，那么这三种类型的包有什么区别？ 区别：tar包：linux打包工具生成的包通常用tar作为后缀，tar包不一定有压缩，其实可以压缩，也可以不压缩，例如xxx.tar.gz，就表示这个tar包是压缩的，并且使用的压缩算法是GNU ZIP，而xxx.tar.bz2就表示这个包使用了bzip2算法进行压缩，当然这样">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-02T10:31:14.477Z">
+<meta property="og:updated_time" content="2019-02-02T10:35:27.389Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tar、jar、war包区别">
-<meta name="twitter:description" content="前言:在部署包的时候，会经常看到很多类型的包，其中常见的tar包、jar包、war包等，那么这三种类型的包有什么区别？ 区别：tar包：linux打包工具生成的包通常用tar作为后缀，tar包不一定有压缩，其实可以压缩，也可以不压缩，例如xxx.tar.gz，就表示这个tar包是压缩的，并且使用的压缩算法是GNU ZIP，而xxx.tar.bz2就表示这个包使用了bzip2算法进行压缩，当然这样的">
+<meta name="twitter:description" content="前言:在部署包的时候，经常会看到很多类型的包，其中常见的有tar包、jar包、war包等，那么这三种类型的包有什么区别？ 区别：tar包：linux打包工具生成的包通常用tar作为后缀，tar包不一定有压缩，其实可以压缩，也可以不压缩，例如xxx.tar.gz，就表示这个tar包是压缩的，并且使用的压缩算法是GNU ZIP，而xxx.tar.bz2就表示这个包使用了bzip2算法进行压缩，当然这样">
 
 
 
@@ -372,7 +372,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-02-02T18:31:14+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-02-02T18:35:27+08:00">
                 2019-02-02
               </time>
             
@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  295
+                  294
                 </span>
               
 
@@ -485,9 +485,9 @@
       
 
       
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h4><p>在部署包的时候，会经常看到很多类型的包，其中常见的tar包、jar包、war包等，那么这三种类型的包有什么区别？</p>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h4><p>在部署包的时候，经常会看到很多类型的包，其中常见的有tar包、jar包、war包等，那么这三种类型的包有什么区别？</p>
 <h4 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h4><p>tar包：<br>linux打包工具生成的包通常用tar作为后缀，tar包不一定有压缩，其实可以压缩，也可以不压缩，例如xxx.tar.gz，就表示这个tar包是压缩的，并且使用的压缩算法是GNU ZIP，而xxx.tar.bz2就表示这个包使用了bzip2算法进行压缩，当然这样的命名只是一种惯例，并非强制。简单地说，linux下的tar命令就仅是打包。</p>
-<p>jar包：<br>就是Java Archive，Java编译好之后生成的class文件的包，由于直接发布这些class文件不是很方便，所以就会把许多的class文件打包成一个jar，jar中除了class文件还可以包括一些资源和配置文件，通常一个jar包就是一个java程序或者一个java库。</p>
+<p>jar包：<br>Java Archive，Java编译好之后生成的class文件的包，由于直接发布这些class文件不是很方便，所以就会把许多的class文件打包成一个jar，jar中除了class文件还可以包括一些资源和配置文件，通常一个jar包就是一个java程序或者一个java库。</p>
 <p>war包：<br>Web application  Archive，与jar基本相同，但它通常表示这是一个Java的Web应用程序的包，tomcat这种Servlet容器会认出war包并自动部署。</p>
 
       
