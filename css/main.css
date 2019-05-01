@@ -1979,7 +1979,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3dffff;
+  background: #05f5d7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3302,13 +3302,13 @@ pre .javascript .function {
   }
 }
 header {
-  width: 80% !important;
+  width: 85% !important;
 }
 header.post-header {
   width: auto !important;
 }
 .container .main-inner {
-  width: 90%;
+  width: 85%;
 }
 .content-wrap {
   width: calc(100% - 260px);
