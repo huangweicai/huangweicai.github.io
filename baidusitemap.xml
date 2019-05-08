@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://huangweicai.github.io/2019/01/08/SpringBoot+Jpa%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2019-05-08T11:56:18.871Z</lastmod>
+  </url>  <url>
     <loc>https://huangweicai.github.io/2019/05/01/Hexo%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6/</loc>
     <lastmod>2019-05-01T10:08:19.976Z</lastmod>
   </url>  <url>
@@ -51,9 +54,6 @@
   </url>  <url>
     <loc>https://huangweicai.github.io/2018/12/30/SpringBoot%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85/</loc>
     <lastmod>2019-01-21T12:15:26.551Z</lastmod>
-  </url>  <url>
-    <loc>https://huangweicai.github.io/2019/01/08/SpringBoot+Jpa%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2019-01-21T12:15:11.716Z</lastmod>
   </url>  <url>
     <loc>https://huangweicai.github.io/2019/01/10/html%E5%A4%8D%E6%9D%82%E8%A1%A8%E6%A0%BC/</loc>
     <lastmod>2019-01-21T12:14:58.309Z</lastmod>
