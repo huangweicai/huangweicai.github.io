@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vue动态添加,删除dev]]></title>
+    <url>%2F2019%2F05%2F17%2FVue%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0%2C%E5%88%A0%E9%99%A4div%2F</url>
+    <content type="text"><![CDATA[效果图 完整源码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179&lt;template&gt;&lt;div class=&quot;boxShadow&quot;&gt; &lt;div&gt; &lt;el-button style=&quot;width:90px; font-size: 12px&quot;&gt;全部扫描&lt;/el-button&gt; &lt;el-button style=&quot;width:90px; font-size: 12px&quot;&gt;全部清除&lt;/el-button&gt; &lt;/div&gt; &lt;div&gt; &lt;div style=&quot;margin-top: 15px;&quot; v-for=&quot;(item, pos) in divList&quot;&gt; &lt;el-input placeholder=&quot;请输入仓库地址，如有分支则空格隔开加分支名称，默认不加检测master分支。&quot; v-model=&quot;item.gitUrl&quot; class=&quot;input-with-select&quot;&gt; &lt;!-- 编码规则 --&gt; &lt;template&gt; &lt;el-select v-model=&quot;item.codeType&quot; slot=&quot;prepend&quot; placeholder=&quot;请选择编码规则&quot; style=&quot;width: 150px&quot;&gt; &lt;el-option v-for=&quot;opItem in options&quot; :key=&quot;opItem.value&quot; :label=&quot;opItem.label&quot; :value=&quot;opItem.value&quot;&gt; &lt;/el-option&gt; &lt;/el-select&gt; &lt;/template&gt; &lt;!-- 删除 --&gt; &lt;el-button slot=&quot;append&quot; @click=&quot;deleteNode(pos)&quot;&gt;删除&lt;/el-button&gt; &lt;/el-input&gt; &lt;/div&gt; &lt;div style=&quot;width: 100%; text-align:center; margin-top: 15px; margin-bottom: 15px&quot;&gt; &lt;!-- 增加 --&gt; &lt;el-button icon=&quot;el-icon-plus&quot; @click=&quot;addNode()&quot;&gt;&lt;/el-button&gt; &lt;/div&gt; &lt;el-table :data=&quot;data&quot; :header-cell-style=&quot;tableHeaderColor&quot; ref=&apos;multipleTable&apos; border stripe style=&quot;width: 100%; margin-top: 20px; font-size: 10px&quot;&gt; &lt;el-table-column align=&quot;center&quot; prop=&quot;projectName&quot; label=&quot;仓库名&quot; width=&quot;200&quot;&gt; &lt;template slot-scope=&quot;scope&quot;&gt; &lt;div class=&quot;tv-branch&quot;&gt; &#123;&#123; scope.row.projectName &#125;&#125;&lt;/div&gt; &lt;/template&gt; &lt;/el-table-column&gt; &lt;el-table-column class=&quot;tv-branch&quot; align=&quot;center&quot; prop=&quot;jiraId&quot; label=&quot;分支名&quot;&gt; &lt;template slot-scope=&quot;scope&quot;&gt; &lt;div class=&quot;tv-branch&quot;&gt; &#123;&#123; scope.row.jiraId &#125;&#125;&lt;/div&gt; &lt;/template&gt; &lt;/el-table-column&gt; &lt;el-table-column label=&quot;文件数&quot; min-width=&quot;130px&quot; align=&quot;center&quot;&gt; &lt;template slot-scope=&quot;scope&quot;&gt; &lt;div v-for=&quot;item in scope.row.appVos&quot; class=&quot;tv-branch&quot;&gt; &#123;&#123; item.appName &#125;&#125;&lt;/div&gt; &lt;/template&gt; &lt;/el-table-column&gt; &lt;el-table-column label=&quot;不规范项&quot; min-width=&quot;130px&quot; align=&quot;center&quot;&gt; &lt;template slot-scope=&quot;scope&quot;&gt; &lt;div v-for=&quot;item in scope.row.appVos&quot; class=&quot;tv-branch&quot;&gt; &#123;&#123; item.branchName &#125;&#125;&lt;/div&gt; &lt;/template&gt; &lt;/el-table-column&gt; &lt;el-table-column label=&quot;SonarQube地址&quot; min-width=&quot;130px&quot; align=&quot;center&quot;&gt; &lt;template slot-scope=&quot;scope&quot;&gt; &lt;div v-for=&quot;item in scope.row.appVos&quot; class=&quot;tv-branch&quot;&gt; &#123;&#123; item.branchName &#125;&#125;&lt;/div&gt; &lt;/template&gt; &lt;/el-table-column&gt; &lt;el-table-column class=&quot;tv-branch&quot; align=&quot;center&quot; prop=&quot;updatedTime&quot; label=&quot;扫描时间&quot;&gt; &lt;template slot-scope=&quot;scope&quot;&gt; &lt;div class=&quot;tv-branch&quot;&gt; &#123;&#123; scope.row.updatedTime &#125;&#125;&lt;/div&gt; &lt;/template&gt; &lt;/el-table-column&gt; &lt;/el-table&gt; &lt;/div&gt; &lt;/div&gt;&lt;/template&gt; &lt;script type=&apos;text/javascript&apos;&gt; export default &#123; name: &apos;xxx&apos;, methods: &#123; // 修改table header的背景色 tableHeaderColor(&#123; row, column, rowIndex, columnIndex &#125;) &#123; if (rowIndex === 0) &#123; return &apos;background-color: #f0f9eb&apos; // return &apos;background-color: #f0f9eb; color: #fff; font-weight: 500;&apos; &#125; &#125;, //添加标本div addNode() &#123; this.divList.push(&#123;&quot;codeType&quot;: &quot;&quot;, &quot;gitUrl&quot;: &quot;&quot;&#125;); &#125;, //删除样本div deleteNode(i) &#123; this.divList.splice(i, 1); //删除index为i,位置的数组元素 &#125;, &#125;, data() &#123; return &#123; data: [], options: [&#123; value: &apos;选项1&apos;, label: &apos;Java&apos; &#125;, &#123; value: &apos;选项2&apos;, label: &apos;C#&apos; &#125;, &#123; value: &apos;选项3&apos;, label: &apos;iOS&apos; &#125;, &#123; value: &apos;选项4&apos;, label: &apos;Js&apos; &#125;, &#123; value: &apos;选项5&apos;, label: &apos;Python&apos; &#125;], divList: [ &#123;&quot;codeType&quot;: &quot;&quot;, &quot;gitUrl&quot;: &quot;&quot;&#125; ], &#125; &#125;, &#125;&lt;/script&gt;&lt;style lang=&quot;less&quot; scoped&gt; .clean&#123; clear:both; &#125; .tv-branch&#123; // display: table-cell; vertical-align: middle; text-align: center; margin-top: 10px; margin-bottom: 10px; margin-left: auto; margin-right: auto; text-align: left;&#125; .el-select .el-input &#123; width: 130px; &#125; .input-with-select .el-input-group__prepend &#123; background-color: #fff; &#125;&lt;/style&gt; 小结vue实现动态加载div，主要利用vue中的v-for指令，由于与数据源双向绑定的特性，可以通过修改数据源从而动态加载或删除div。]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Vue入门及上手教程]]></title>
+    <url>%2F2019%2F05%2F17%2FVue%E5%85%A5%E9%97%A8%E5%8F%8A%E4%B8%8A%E6%89%8B%E6%95%99%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[故事背景我所在的部门的职能是提高其他业务部门在产品交付上的更好、更快。以前，公司内部与三方公司签订了协议，购买了别人家一套开发软件，帮助我们更好地落地这个流水线的概念。后来，由于软件升级及需求限制，产品战略转型，转成自建流水线，再后来就有了这次Vue前端界面技术选型经历。 由于内部团队，包括三方支持公司的驻场人员对Vue都不是很熟悉，后来经过考虑，还是由我来主导和负责Vue前端界面的开发工作。其实，对于前端，我是有一定的基础的，但由于Vue这个框架以前我也没怎么接触过，那么后来我是如何在两个星期入门并上手Vue开发，这期间我的一些做法希望可以给你带来一点启发。 故事经历当时，我们的目标和开发任务还是挺重的，我们给业务部门承诺的是两个星期把流水线的流程基本呈现出来，并基础可用。 刚开始，我的考虑是这样的。由于Vue我不熟悉，那么可以理解为零基础。对于零基础的我，怎么能更快的打通Vue的天地线呢？ 我的做法就是开始两天死磕Vue语法和官网案例，我的目的也是很明确的，为了尽可能少的避免认知盲区，基础的语法和概念性的东西，我是一定要知道的。 好了，经过两天的语法和案例的学习，期间我也做了不少笔录，作为记忆索引。 接下来，我需要找一个比较完备的Vue实战案例，经过在github上的一番搜索和选择，最后我决定使用vue-element-admin, vue-element-admin是一个比较完备的案例了，上面有很多基础的功能，可以减少不少的重复造轮子的时间。 那么，这个demo怎么使用呢？ 记住以下几个步骤就可以启动起来了。 步骤：1.安装node.js环境2.安装Visual Studio开发工具，顺带也可以安装一下vue语法插件，帮助编写和提示代码。3.依次执行如下命令，大概就是拉取demo，初始化基础依赖，最后的npm run dev执行完毕后会自动打开本地网页。1234567891011121314# 克隆项目git clone https://github.com/PanJiaChen/vue-element-admin.git# 进入项目目录cd vue-element-admin# 安装依赖npm install# 建议不要用 cnpm 安装 会有各种诡异的bug 可以通过如下操作解决 npm 下载速度慢的问题npm install --registry=https://registry.npm.taobao.org# 启动服务npm run dev 4.现在可以在src目录下随便找一个.vue文件来修改，界面会实时更新。 经过上面一番操作后，现在基本可以修改界面了。 那么，再接下来就是熟悉demo的项目结构（例如项目的加载入口，加载结构等），基础的配置文件（例如开发环境，测试环境，打包配置等）。 下面，我框红一些关键性的点，这是项目开发到上线必经之路。 项目截图一览，框红部分需要特别注意。 经过一段时间的努力，项目可以打包发布到线上了。 那么，重点需要关注的就是config目录。dev.env.js修改开发环境请求的baseUrlprod.env.js修改生产环境请求的baseUrlindex.js文件，修改打包的配置。 上面都配置好了之后，执行打包命令。1npm run build 打包结束后，把打包好的dist文件夹上传到服务器指定的目录中。 最后，通过浏览器访问一下就可以看到Vue开发的前端界面了。 汇总相关资料上面故事的经历，只是大概介绍了主要流程，其实期间还发生了很多细小的故事。例如，跨域的解决、开发过程中问题点等。下面把过去解决和参考过的资料汇总一下，当然也包括上面提到的资源地址。 基础语法Vue语法官网案例 demo案例及开发vue-element-admin,Vue知识点总结Vue使用的element元素组件官网 vue项目打包部署——nginx代理访问基于Vue2.0+Vue-router构建一个简单的单页应用如何搭建一个vue项目(完整步骤)所谓的跨域（Cross-Origin），究竟是什么？——你所不知道浏览器跨域的小知识跨域资源共享 CORS 详解 往期文章推荐Vue安装浏览器开发工具之前阅读vue语法时做的没经过整理的笔记]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Vue使用el-radio-group实现tab选项卡效果]]></title>
+    <url>%2F2019%2F05%2F17%2FVue%E4%BD%BF%E7%94%A8el-radio-group%E5%AE%9E%E7%8E%B0tab%E9%80%89%E9%A1%B9%E5%8D%A1%E6%95%88%E6%9E%9C%2F</url>
+    <content type="text"><![CDATA[效果图 完整源码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960&lt;template&gt; &lt;div id=&quot;app&quot;&gt; &lt;div style=&quot;margin:0 auto;width:325px; margin-bottom:18px&quot;&gt; &lt;el-radio-group v-model=&quot;radio&quot; size=&quot;medium&quot;&gt; &lt;el-radio-button label=&quot;代码仓库&quot;&gt;&lt;/el-radio-button&gt; &lt;el-radio-button label=&quot;网站&quot;&gt;&lt;/el-radio-button&gt; &lt;el-radio-button label=&quot;微博&quot;&gt;&lt;/el-radio-button&gt; &lt;el-radio-button label=&quot;公众号&quot; disabled&gt;&lt;/el-radio-button&gt; &lt;/el-radio-group&gt; &lt;/div&gt; &lt;!-- tab内容 --&gt; &lt;keep-alive&gt; &lt;component v-bind:is=&quot;tabView, tabChange(radio)&quot; style=&quot;background: #FF0000; width: 100%; height: 100%&quot;&gt;&lt;/component&gt; &lt;/keep-alive&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import select1 from &apos;./components/xxx1.vue&apos;; import select2 from &apos;./components/xxx2.vue&apos;; import select3 from &apos;./components/xxx3.vue&apos;; import select4 from &apos;./components/xxx4.vue&apos;;export default &#123; name: &apos;app&apos;, data () &#123; return &#123; radio: &apos;代码仓库&apos;, tabView: &apos;select1&apos;, &#125; &#125;, components: &#123; select1, select2, select3, select4 &#125;, methods: &#123; tabChange(tab)&#123; // this.tabView = tab; console.log(&quot;tab：&quot;+tab) if(&apos;代码仓库&apos; == tab)&#123; this.tabView = &apos;select1&apos; &#125;else if(&apos;网站&apos; == tab)&#123; this.tabView = &apos;select2&apos; &#125;else if(&apos;微博&apos; == tab)&#123; this.tabView = &apos;select3&apos; &#125;else if(&apos;公众号&apos; == tab)&#123; this.tabView = &apos;select4&apos; &#125; &#125; &#125;, &#125; &lt;/script&gt; 小结1.获取当前点击的是哪个button，通过el-radio-group的v-model=”radio”来得到。radio在点击后，值会是label=”代码仓库”其中的一个。2.component通过v-bind动态传值，进而达到切换tab内容的目的。]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Vue安装浏览器开发工具]]></title>
     <url>%2F2019%2F05%2F12%2FVue%E5%AE%89%E8%A3%85%E6%B5%8F%E8%A7%88%E5%99%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%2F</url>
     <content type="text"><![CDATA[背景开发vue时，浏览器有一个好的开发调试工具能让开发事半功倍，磨刀不误砍柴工。 步骤1.下载工具地址：https://github.com/vuejs/vue-devtools 2.安装依赖cmd进入vue-devtools文件夹，安装相关依赖，依次执行npm install,再执行npm run build。 3.修改配置打开shells&gt;chrome&gt;src&gt;manifest.json，修改”persistent”:false为true。 4.浏览器安装经过前面几步，工具基本已经准备好了。接下来，打开浏览器。· 打开里面的设置&gt;点击拓展程序&gt;点击开发者模式· 再点击加载已解压的扩展程序，然后把shells&gt;chrome这个文件夹加入即可。 5.测试打开一个用vue开发的网页，打开chrome调试工具查看效果。]]></content>
@@ -20,18 +53,6 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[如何下载安装Xshell及Xftp]]></title>
-    <url>%2F2019%2F03%2F15%2FGit%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93%20-%20%E5%89%AF%E6%9C%AC%2F</url>
-    <content type="text"><![CDATA[一、官网 https://www.netsarang.com/zh/xshell/ 二、找到下图对应的下载按钮，分别下载xshell、xftp 三、如果是个人使用，点击“免费授权页面”。 四、在打开的界面中，填写姓名和一个用于接收软件下载链接的邮箱，完毕点击下载。 五、过一会，就会收到邮件。 六、打开邮件，点击下图标红链接，就会自动在浏览器下载软件了。 （可以先下载xshell，再xftp，操作步骤一致。）]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>xshell</tag>
-        <tag>xftp</tag>
       </tags>
   </entry>
   <entry>
