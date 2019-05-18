@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="Vue使用emit和on例子，下面提供一个使用参考。 完整源码1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;      &amp;lt;p @click=&amp;apos;emit&amp;apos;&amp;gt;&amp;#123;&amp;#123;msg&amp;#125;&amp;#125;&amp;lt;/p&amp;">
+<meta name="description" content="Vue使用emit和on例子，下面提供一个使用参考。1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;      &amp;lt;p @click=&amp;apos;emit&amp;apos;&amp;gt;&amp;#123;&amp;#123;msg&amp;#125;&amp;#125;&amp;lt;/p&amp;gt;">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue使用emit和on例子">
 <meta property="og:url" content="https://huangweicai.github.io/2019/05/18/Vue使用emit和on例子/index.html">
 <meta property="og:site_name" content="Hans在路上">
-<meta property="og:description" content="Vue使用emit和on例子，下面提供一个使用参考。 完整源码1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;      &amp;lt;p @click=&amp;apos;emit&amp;apos;&amp;gt;&amp;#123;&amp;#123;msg&amp;#125;&amp;#125;&amp;lt;/p&amp;">
+<meta property="og:description" content="Vue使用emit和on例子，下面提供一个使用参考。1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;      &amp;lt;p @click=&amp;apos;emit&amp;apos;&amp;gt;&amp;#123;&amp;#123;msg&amp;#125;&amp;#125;&amp;lt;/p&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-18T07:41:15.005Z">
+<meta property="og:updated_time" content="2019-05-18T07:50:54.120Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue使用emit和on例子">
-<meta name="twitter:description" content="Vue使用emit和on例子，下面提供一个使用参考。 完整源码1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;      &amp;lt;p @click=&amp;apos;emit&amp;apos;&amp;gt;&amp;#123;&amp;#123;msg&amp;#125;&amp;#125;&amp;lt;/p&amp;">
+<meta name="twitter:description" content="Vue使用emit和on例子，下面提供一个使用参考。1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;      &amp;lt;p @click=&amp;apos;emit&amp;apos;&amp;gt;&amp;#123;&amp;#123;msg&amp;#125;&amp;#125;&amp;lt;/p&amp;gt;">
 
 
 
@@ -372,7 +372,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-05-18T15:41:15+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-05-18T15:50:54+08:00">
                 2019-05-18
               </time>
             
@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  183
+                  179
                 </span>
               
 
@@ -485,8 +485,7 @@
       
 
       
-        <p>Vue使用emit和on例子，下面提供一个使用参考。</p>
-<p><strong>完整源码</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      &lt;p @click=&apos;emit&apos;&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;</span><br><span class="line">      &lt;p @click=&apos;emitOther&apos;&gt;&#123;&#123;msg2&#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;demo&apos;,</span><br><span class="line">  data () &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">         msg : &apos;点击后女人派发事件&apos;,</span><br><span class="line">         msg2 : &apos;点击后女人派发事件2&apos;,</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created () &#123;</span><br><span class="line"></span><br><span class="line">      this.$on([&apos;wash_Goods&apos;,&apos;drive_Car&apos;],(arg)=&gt; &#123;</span><br><span class="line">          console.log(&apos;事真多&apos;)</span><br><span class="line">      &#125;)</span><br><span class="line">      this.$on(&apos;wash_Goods&apos;,(arg)=&gt; &#123;</span><br><span class="line">          console.log(arg)</span><br><span class="line">      &#125;)</span><br><span class="line">      this.$on(&apos;drive_Car&apos;,(...arg)=&gt; &#123;</span><br><span class="line">          console.log(BMW,Ferrari)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  methods : &#123;</span><br><span class="line">      emit () &#123;</span><br><span class="line">         this.$emit(&apos;wash_Goods&apos;,&apos;fish&apos;)</span><br><span class="line">      &#125;,</span><br><span class="line">      emitOther () &#123;</span><br><span class="line">         this.$emit(&apos;drive_Car&apos;,[&apos;BMW&apos;,&apos;Ferrari&apos;])</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+        <p>Vue使用emit和on例子，下面提供一个使用参考。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      &lt;p @click=&apos;emit&apos;&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;</span><br><span class="line">      &lt;p @click=&apos;emitOther&apos;&gt;&#123;&#123;msg2&#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;demo&apos;,</span><br><span class="line">  data () &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">         msg : &apos;点击后女人派发事件&apos;,</span><br><span class="line">         msg2 : &apos;点击后女人派发事件2&apos;,</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created () &#123;</span><br><span class="line"></span><br><span class="line">      this.$on([&apos;wash_Goods&apos;,&apos;drive_Car&apos;],(arg)=&gt; &#123;</span><br><span class="line">          console.log(&apos;事真多&apos;)</span><br><span class="line">      &#125;)</span><br><span class="line">      this.$on(&apos;wash_Goods&apos;,(arg)=&gt; &#123;</span><br><span class="line">          console.log(arg)</span><br><span class="line">      &#125;)</span><br><span class="line">      this.$on(&apos;drive_Car&apos;,(...arg)=&gt; &#123;</span><br><span class="line">          console.log(BMW,Ferrari)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  methods : &#123;</span><br><span class="line">      emit () &#123;</span><br><span class="line">         this.$emit(&apos;wash_Goods&apos;,&apos;fish&apos;)</span><br><span class="line">      &#125;,</span><br><span class="line">      emitOther () &#123;</span><br><span class="line">         this.$emit(&apos;drive_Car&apos;,[&apos;BMW&apos;,&apos;Ferrari&apos;])</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
