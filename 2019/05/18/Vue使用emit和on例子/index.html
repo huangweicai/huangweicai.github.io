@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="sql,关联查询," />
+  <meta name="keywords" content="vue," />
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="关于有时候，我们查询数据时，会采用多数据库关联查询的方式。数据库通过连接两张表或多张表查询时，会生成一张临时的中间表，然后返回给用户的就是这张临时表的数据。那么具体怎么操作呢？我们可以采用left join，搭配on、where来实现。 具体备注：1.on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。2.where条件是在临时表生成好后，再对临时表进行过滤的条">
-<meta name="keywords" content="sql,关联查询">
+<meta name="description" content="Vue使用emit和on例子，下面提供一个使用参考。 完整源码1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;      &amp;lt;p @click=&amp;apos;emit&amp;apos;&amp;gt;&amp;#123;&amp;#123;msg&amp;#125;&amp;#125;&amp;lt;/p&amp;">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sql多表关联查询">
-<meta property="og:url" content="https://huangweicai.github.io/2019/01/11/sql多表关联查询/index.html">
+<meta property="og:title" content="Vue使用emit和on例子">
+<meta property="og:url" content="https://huangweicai.github.io/2019/05/18/Vue使用emit和on例子/index.html">
 <meta property="og:site_name" content="Hans在路上">
-<meta property="og:description" content="关于有时候，我们查询数据时，会采用多数据库关联查询的方式。数据库通过连接两张表或多张表查询时，会生成一张临时的中间表，然后返回给用户的就是这张临时表的数据。那么具体怎么操作呢？我们可以采用left join，搭配on、where来实现。 具体备注：1.on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。2.where条件是在临时表生成好后，再对临时表进行过滤的条">
+<meta property="og:description" content="Vue使用emit和on例子，下面提供一个使用参考。 完整源码1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;      &amp;lt;p @click=&amp;apos;emit&amp;apos;&amp;gt;&amp;#123;&amp;#123;msg&amp;#125;&amp;#125;&amp;lt;/p&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-21T12:16:14.452Z">
+<meta property="og:updated_time" content="2019-05-18T07:41:15.005Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sql多表关联查询">
-<meta name="twitter:description" content="关于有时候，我们查询数据时，会采用多数据库关联查询的方式。数据库通过连接两张表或多张表查询时，会生成一张临时的中间表，然后返回给用户的就是这张临时表的数据。那么具体怎么操作呢？我们可以采用left join，搭配on、where来实现。 具体备注：1.on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。2.where条件是在临时表生成好后，再对临时表进行过滤的条">
+<meta name="twitter:title" content="Vue使用emit和on例子">
+<meta name="twitter:description" content="Vue使用emit和on例子，下面提供一个使用参考。 完整源码1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;      &amp;lt;p @click=&amp;apos;emit&amp;apos;&amp;gt;&amp;#123;&amp;#123;msg&amp;#125;&amp;#125;&amp;lt;/p&amp;">
 
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="https://huangweicai.github.io/2019/01/11/sql多表关联查询/"/>
+  <link rel="canonical" href="https://huangweicai.github.io/2019/05/18/Vue使用emit和on例子/"/>
 
 
 
@@ -144,7 +144,7 @@
   daovoice('update');
   </script>
 
-  <title>sql多表关联查询 | Hans在路上</title>
+  <title>Vue使用emit和on例子 | Hans在路上</title>
   
 
 
@@ -327,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://huangweicai.github.io/2019/01/11/sql多表关联查询/">
+    <link itemprop="mainEntityOfPage" href="https://huangweicai.github.io/2019/05/18/Vue使用emit和on例子/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hans">
@@ -344,7 +344,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">sql多表关联查询</h2>
+          <h2 class="post-title" itemprop="name headline">Vue使用emit和on例子</h2>
         
 
         <div class="post-meta">
@@ -356,8 +356,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-11T20:42:31+08:00">
-                2019-01-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-18T15:39:29+08:00">
+                2019-05-18
               </time>
             
 
@@ -372,8 +372,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-01-21T20:16:14+08:00">
-                2019-01-21
+              <time title="更新于" itemprop="dateModified" datetime="2019-05-18T15:41:15+08:00">
+                2019-05-18
               </time>
             
           </span>
@@ -391,8 +391,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
                   </a>
                 </span>
 
@@ -409,8 +409,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/11/sql多表关联查询/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/11/sql多表关联查询/" itemprop="commentCount"></span>
+                <a href="/2019/05/18/Vue使用emit和on例子/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/18/Vue使用emit和on例子/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -418,7 +418,7 @@
 
           
           
-             <span id="/2019/01/11/sql多表关联查询/" class="leancloud_visitors" data-flag-title="sql多表关联查询">
+             <span id="/2019/05/18/Vue使用emit和on例子/" class="leancloud_visitors" data-flag-title="Vue使用emit和on例子">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  303
+                  183
                 </span>
               
 
@@ -485,9 +485,8 @@
       
 
       
-        <h4 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h4><p>有时候，我们查询数据时，会采用多数据库关联查询的方式。数据库通过连接两张表或多张表查询时，会生成一张临时的中间表，然后返回给用户的就是这张临时表的数据。那么具体怎么操作呢？我们可以采用left join，搭配on、where来实现。</p>
-<h4 id="具体"><a href="#具体" class="headerlink" title="具体"></a>具体</h4><p>备注：<br>1.on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。<br>2.where条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有left join的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table1 a LEFT JOIN table2 b ON a.Sid = b.Sid WHERE a.Sname=&quot;小明&quot;</span><br><span class="line">Select * from aaa a left join bbb b on a.id = b.id and b.name = &apos;111111111&apos;;</span><br></pre></td></tr></table></figure></p>
-<p>个人案例：选用两表中部分字段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SELECT a.project_id AS 项目id,</span><br><span class="line">       b.before_time AS 统计的结束时间,</span><br><span class="line">       b.valid_row_count AS 行数,</span><br><span class="line">       b.add_row_count AS 增加行数,</span><br><span class="line">       b.delete_row_count AS 删除行数</span><br><span class="line"> FROM </span><br><span class="line"> gitlog_project_app a</span><br><span class="line"> LEFT JOIN</span><br><span class="line"> gitlog_detail b</span><br><span class="line"> ON a.id = b.project_app_id</span><br><span class="line"> order by project_id desc</span><br></pre></td></tr></table></figure></p>
+        <p>Vue使用emit和on例子，下面提供一个使用参考。</p>
+<p><strong>完整源码</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      &lt;p @click=&apos;emit&apos;&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;</span><br><span class="line">      &lt;p @click=&apos;emitOther&apos;&gt;&#123;&#123;msg2&#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;demo&apos;,</span><br><span class="line">  data () &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">         msg : &apos;点击后女人派发事件&apos;,</span><br><span class="line">         msg2 : &apos;点击后女人派发事件2&apos;,</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created () &#123;</span><br><span class="line"></span><br><span class="line">      this.$on([&apos;wash_Goods&apos;,&apos;drive_Car&apos;],(arg)=&gt; &#123;</span><br><span class="line">          console.log(&apos;事真多&apos;)</span><br><span class="line">      &#125;)</span><br><span class="line">      this.$on(&apos;wash_Goods&apos;,(arg)=&gt; &#123;</span><br><span class="line">          console.log(arg)</span><br><span class="line">      &#125;)</span><br><span class="line">      this.$on(&apos;drive_Car&apos;,(...arg)=&gt; &#123;</span><br><span class="line">          console.log(BMW,Ferrari)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  methods : &#123;</span><br><span class="line">      emit () &#123;</span><br><span class="line">         this.$emit(&apos;wash_Goods&apos;,&apos;fish&apos;)</span><br><span class="line">      &#125;,</span><br><span class="line">      emitOther () &#123;</span><br><span class="line">         this.$emit(&apos;drive_Car&apos;,[&apos;BMW&apos;,&apos;Ferrari&apos;])</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -541,7 +540,7 @@
 	  </li>
 	  <li class="post-copyright-link">
 		<strong>本文链接：</strong>
-		<a href="/2019/01/11/sql多表关联查询/" title="sql多表关联查询">2019/01/11/sql多表关联查询/</a>
+		<a href="/2019/05/18/Vue使用emit和on例子/" title="Vue使用emit和on例子">2019/05/18/Vue使用emit和on例子/</a>
 	  </li>
 	  <li class="post-copyright-license">
 		<strong>版权： </strong>
@@ -554,9 +553,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/sql/" rel="tag"># sql</a>
-          
-            <a href="/tags/关联查询/" rel="tag"># 关联查询</a>
+            <a href="/tags/vue/" rel="tag"># vue</a>
           
         </div>
       
@@ -584,8 +581,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/10/html复杂表格/" rel="next" title="html复杂表格">
-                <i class="fa fa-chevron-left"></i> html复杂表格
+              <a href="/2019/05/17/Vue动态添加删除div/" rel="next" title="Vue动态添加删除div">
+                <i class="fa fa-chevron-left"></i> Vue动态添加删除div
               </a>
             
           </div>
@@ -594,8 +591,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/12/Hexo增加搜索功能/" rel="prev" title="Hexo增加搜索功能">
-                Hexo增加搜索功能 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/18/Vue使用props父子组件传递数据/" rel="prev" title="Vue使用props父子组件传递数据">
+                Vue使用props父子组件传递数据 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -651,17 +648,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -741,22 +729,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#关于"><span class="nav-number">1.</span> <span class="nav-text">关于</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体"><span class="nav-number">2.</span> <span class="nav-text">具体</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
