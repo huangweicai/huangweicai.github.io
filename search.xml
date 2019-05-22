@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Window电脑查看本机电脑ip]]></title>
+    <url>%2F2019%2F05%2F22%2FWindow%E7%94%B5%E8%84%91%E6%9F%A5%E7%9C%8B%E6%9C%AC%E6%9C%BA%E7%94%B5%E8%84%91ip%2F</url>
+    <content type="text"><![CDATA[方法一： 1.cmd打开命令窗口 2.输入ipconfig，查看Ipv4。 方法二： 1.直接打开网络设置，选择以太网。 2.在打开的界面中，查看IPv4。]]></content>
+      <categories>
+        <category>Window</category>
+      </categories>
+      <tags>
+        <tag>window</tag>
+        <tag>ip</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Vue使用props父子组件传递数据]]></title>
     <url>%2F2019%2F05%2F18%2FVue%E4%BD%BF%E7%94%A8props%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE%2F</url>
     <content type="text"><![CDATA[Vue使用props父子组件传递数据，下面提供一个使用参考。 父子组件传递数据父组件12345678910111213141516171819&lt;template&gt; &lt;div&gt; &lt;demo :msg=&apos;msgData&apos; :math = &apos;mathData&apos; &gt;&lt;/demo&gt; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;import Demo from &apos;./Demo.vue&apos; export default &#123; data () &#123; return &#123; msgData:&apos;从父组件接收来的数据&apos;, mathData : 2 &#125; &#125;, components : &#123; Demo &#125; &#125;&lt;/script&gt; 子组件12345678910111213&lt;template&gt; &lt;div&gt; &lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt; &lt;p&gt;&#123;&#123;math&#125;&#125;&lt;/p&gt; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;export default &#123; name: &apos;demo&apos;, props: [ &apos;msg&apos; , &apos;math&apos;],&#125;&lt;/script&gt; 父子组件传递函数父组件123456789101112131415161718&lt;template&gt; &lt;div&gt; &lt;demo :fn = &apos;myFunction&apos; &gt;&lt;/demo&gt; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;import Demo from &apos;./Demo.vue&apos; export default &#123; components : &#123; Demo &#125;, methods: &#123; myFunction () &#123; console.log(&apos;vue&apos;) &#125; &#125; &#125;&lt;/script&gt; 子组件123456789101112&lt;template&gt; &lt;div&gt; &lt;button @click=&apos;fn&apos;&gt;按钮&lt;/button&gt; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;export default &#123; name: &apos;demo&apos;, props: [ &apos;fn&apos; ],&#125;&lt;/script&gt; 另外，当传递的数量一旦多到已经让原子化不再结构清晰的时候，通过一个对象传递显得更为简洁明了。 父子组件传递对象数据父组件123456789101112131415161718&lt;template&gt; &lt;div&gt; &lt;demo v-bind= &apos;msg&apos; &gt;&lt;/demo&gt; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;import Demo from &apos;./Demo.vue&apos; export default &#123; components : &#123; Demo &#125;, data () &#123; return &#123; msg : &#123;a:1,b:2&#125; &#125; &#125; &#125;&lt;/script&gt; 子组件12345678910111213141516&lt;template&gt; &lt;div&gt; &lt;button&gt;按钮&lt;/button&gt; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;export default &#123; name: &apos;demo&apos;, props: [&apos;a&apos;,&apos;b&apos;], created () &#123; console.log(this.a) console.log(this.b) &#125;,&#125;&lt;/script&gt;]]></content>
