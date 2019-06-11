@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[记一次远程调试总结]]></title>
+    <url>%2F2019%2F06%2F11%2F%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[远程调试流程： 1.准备1）服务器上安装了Jboss或Tomcat。2）Jboss启动脚本standalone.sh，把设置DEBUG_MODE=true，然后执行，默认远程调试端口8787。3）Tomcat远程调试则执行sh catalina.sh jpda start，正常启动则执行sh startup.sh，默认远程调试端口8000。 注意：–&gt;Jboss的standalone.xml配置文件里，里面所有的127.0.0.1都需要修改成0.0.0.0，避免访问不到。–&gt;springboot打出来的war包，部署在jboss上有可能会失败，适用springmvc项目可以。–&gt;Jboss启动使用standalone.sh脚本，关闭则kill进程；Tomca启动使用startup.sh脚本，关闭使用shutdown.sh脚本。 2.开发工具连接1）idea配置调试端口2）eclipse配置调试端口 零碎小结： 1.请求查看Jboss是否安装成功：curl -I 10.87.134.116:7085，注意自己安装的jboss，ip可以用127.0.0.1，通过公司中间件安装的jboss，ip只能用服务器的ip，应该是限制了。2.查看jboss指令：简单方法 ps ax|grep jboss，复杂指令 ps aux|grep jboss（ps -ef|grep jboss）3.使用-x查看启动日志 sh -x standalone.sh4.使用 netstat -ano |grep 查看端口占用情况5.在哪个账户下安装jdk，就切换到该账户启动jboss。修改profile文件需要root权限。报错：standalone.sh: line 306: java: command not found原因：本来在appadmin账户下安装的jdk，后来切换到root账户下修改profile文件。安装jboss后，执行sh standalone.sh报以上错误。再次查看jdk版本发现没有了。解决：再次切回到安装jdk的appadmin账户，再次执行jboss的启动脚本。如下启动成了。 6.使用vim编辑器编辑内容1）vim xxx.txt2）按insert，进入编辑状态。3）编辑完成，按Esc退出编辑状态4）按:输入命令，wq!，强制退出编辑并保存（:wq 保存加退出）另外，也可以Ctrl+z 或者 :q 退出vim模式 参考地址：CentOS查看进程、杀死进程、启动进程等常用命令：https://www.cnblogs.com/aipiaoborensheng/p/7676364.html CentOS下安装jdk1.8.0_181：https://www.cnblogs.com/musan/p/9998132.html spring-boot项目打war包并部署到本地的tomcat容器：（去除内置tomcat）https://blog.csdn.net/see__you__again/article/details/82454783 JBoss的下载以及安装、部署：https://blog.csdn.net/yilisha258/article/details/80287913 idea创建springmvc项目：成功推荐（maven–项目–springmvc插件）https://blog.csdn.net/weixin_42222334/article/details/80362126 其他图示： 远程调试原理 jboss目录结构图 文件系统的类型]]></content>
+      <categories>
+        <category>远程调试</category>
+      </categories>
+      <tags>
+        <tag>debug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何使用Eclipse进行远程调试]]></title>
+    <url>%2F2019%2F06%2F11%2F%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Eclipse%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[Eclipse+Tomcat 第一步：配置Eclipse Run –&gt; Debug Configuration，打开如下窗口，配置完毕后Apply一下再Debug。 第二步：配置tomcat 首先找到虚拟机上tomcat的bin目录，如下。 切换到Xshell 执行sh catalina.sh jpda start则以远程debug模式启动tomcat，默认端口是8000; 执行sh startup.sh则以正常模式启动tomcat，默认端口是8080。 第三步：调试 1.导出war包并上传到tomcat/webapps目录。 2.选择TomcatRemoteDebuger，启动debug。 3.在项目上打断点，并使用postman触发api，查看断点效果。 Eclipse+Jboss 第一步：配置eclipse（同上） 第二步：配置Jboss 1.打开jboss/bin/standalone.sh文件，修改debug模式为true。 2.执行sh standalone.sh启动Jboss，如下看到debug的监听端口8787，这里注意idea的监听端口是8787。 第三步：远程调试 注意：Jboss上存放war包的目录是jboss/standalone/deployments。]]></content>
+      <categories>
+        <category>远程调试</category>
+      </categories>
+      <tags>
+        <tag>debug</tag>
+        <tag>eclipse</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何使用IntelliJ IDEA进行远程调试]]></title>
+    <url>%2F2019%2F06%2F11%2F%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8IntelliJ%20IDEA%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[Intellij IDEA+Tomcat 第一步：idea配置 打开如下窗口，配置完毕后点击OK。 第二步：配置tomcat 首先找到虚拟机上tomcat的bin目录，如下。 切换到Xshell 执行sh catalina.sh jpda start则以远程debug模式启动tomcat，默认端口是8000; 执行sh startup.sh则以正常模式启动tomcat，默认端口是8080。 第三步：远程debug调试 1.首先把idea的工程以war包的形式输出。 2.然后把war包上传到tomcat/webapps目录。 3.选择idea配置的debug对象，然后以debug方式启动。 4.打开postman调用api，可以看到本地断点被拦截。 Intellij IDEA+Jboss 第一步：idea开发工具配置（同上） 第二步：配置Jboss 1.打开jboss/bin/standalone.sh文件，修改debug模式为true。 2.执行sh standalone.sh启动Jboss，如下看到debug的监听端口8787，这里注意idea的监听端口是8787。 第三步：远程debug调试（同上） 注意：Jboss上存放war包的目录是jboss/standalone/deployments。 如下是jboss的执行效果图，注意服务器上jboss的8787端口如果不通，就需要申请端口了。]]></content>
+      <categories>
+        <category>远程调试</category>
+      </categories>
+      <tags>
+        <tag>debug</tag>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Window电脑查看本机电脑ip]]></title>
     <url>%2F2019%2F05%2F22%2FWindow%E7%94%B5%E8%84%91%E6%9F%A5%E7%9C%8B%E6%9C%AC%E6%9C%BA%E7%94%B5%E8%84%91ip%2F</url>
     <content type="text"><![CDATA[方法一： 1.cmd打开命令窗口 2.输入ipconfig，查看Ipv4。 方法二： 1.直接打开网络设置，选择以太网。 2.在打开的界面中，查看IPv4。]]></content>
