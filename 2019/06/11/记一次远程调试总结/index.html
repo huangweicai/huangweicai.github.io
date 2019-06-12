@@ -102,7 +102,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2405826-230e820874308835?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2405826-d873f8fc6289f4be?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2405826-b372da87f9cd8518?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-06-11T15:10:58.780Z">
+<meta property="og:updated_time" content="2019-06-12T11:50:27.037Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次远程调试总结">
 <meta name="twitter:description" content="远程调试流程： 1.准备1）服务器上安装了Jboss或Tomcat。2）Jboss启动脚本standalone.sh，把设置DEBUG_MODE=true，然后执行，默认远程调试端口8787。3）Tomcat远程调试则执行sh catalina.sh jpda start，正常启动则执行sh startup.sh，默认远程调试端口8000。 注意：–&amp;gt;Jboss的standalone.xml">
@@ -381,8 +381,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-11T23:10:58+08:00">
-                2019-06-11
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-12T19:50:27+08:00">
+                2019-06-12
               </time>
             
           </span>
@@ -496,12 +496,12 @@
       
         <p><strong>远程调试流程：</strong></p>
 <p>1.准备<br>1）服务器上安装了Jboss或Tomcat。<br>2）Jboss启动脚本standalone.sh，把设置DEBUG_MODE=true，然后执行，默认远程调试端口8787。<br>3）Tomcat远程调试则执行sh catalina.sh jpda start，正常启动则执行sh startup.sh，默认远程调试端口8000。</p>
-<p>注意：<br>–&gt;Jboss的standalone.xml配置文件里，里面所有的127.0.0.1都需要修改成0.0.0.0，避免访问不到。<br>–&gt;springboot打出来的war包，部署在jboss上有可能会失败，适用springmvc项目可以。<br>–&gt;Jboss启动使用standalone.sh脚本，关闭则kill进程；Tomca启动使用startup.sh脚本，关闭使用shutdown.sh脚本。</p>
+<p>注意：<br>–&gt;Jboss的standalone.xml配置文件里，里面所有的127.0.0.1都需要修改成0.0.0.0，避免访问不到。<br>–&gt;springboot打出来的war包，部署在jboss上有可能会失败，使用springmvc项目可以。<br>–&gt;Jboss启动使用standalone.sh脚本，关闭则kill进程；Tomca启动使用startup.sh脚本，关闭使用shutdown.sh脚本。</p>
 <p>2.开发工具连接<br>1）idea配置调试端口<br><img src="https://upload-images.jianshu.io/upload_images/2405826-31bdad0ee99c8461?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>2）eclipse配置调试端口<br><img src="https://upload-images.jianshu.io/upload_images/2405826-a4dbe9fe7eea567a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><strong>零碎小结：</strong></p>
 <p>1.请求查看Jboss是否安装成功：curl -I 10.87.134.116:7085，注意自己安装的jboss，ip可以用127.0.0.1，通过公司中间件安装的jboss，ip只能用服务器的ip，应该是限制了。<br>2.查看jboss指令：简单方法 ps ax|grep jboss，复杂指令 ps aux|grep jboss<br>（ps -ef|grep jboss）<br><img src="https://upload-images.jianshu.io/upload_images/2405826-9583cc2a1114588d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>3.使用-x查看启动日志 sh -x standalone.sh<br>4.使用 netstat -ano |grep 查看端口占用情况<br>5.在哪个账户下安装jdk，就切换到该账户启动jboss。修改profile文件需要root权限。<br>报错：standalone.sh: line 306: java: command not found<br>原因：本来在appadmin账户下安装的jdk，后来切换到root账户下修改profile文件。安装jboss后，执行sh standalone.sh报以上错误。再次查看jdk版本发现没有了。<br><img src="https://upload-images.jianshu.io/upload_images/2405826-113dd05df4d38fa2?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>解决：再次切回到安装jdk的appadmin账户，再次执行jboss的启动脚本。如下启动成了。<br><img src="https://upload-images.jianshu.io/upload_images/2405826-d93fe7d51cc6cc54?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>6.使用vim编辑器编辑内容<br>1）vim xxx.txt<br>2）按insert，进入编辑状态。<br>3）编辑完成，按Esc退出编辑状态<br>4）按:输入命令，wq!，强制退出编辑并保存（:wq 保存加退出）<br>另外，也可以Ctrl+z 或者 :q 退出vim模式</p>
-<p><strong>参考地址：</strong><br>CentOS查看进程、杀死进程、启动进程等常用命令：<a href="https://www.cnblogs.com/aipiaoborensheng/p/7676364.html" target="_blank" rel="noopener">https://www.cnblogs.com/aipiaoborensheng/p/7676364.html</a></p>
+<p><strong>参考地址：</strong><br>CentOS查看进程、杀死进程、启动进程等常用命令：<br><a href="https://www.cnblogs.com/aipiaoborensheng/p/7676364.html" target="_blank" rel="noopener">https://www.cnblogs.com/aipiaoborensheng/p/7676364.html</a></p>
 <p>CentOS下安装jdk1.8.0_181：<br><a href="https://www.cnblogs.com/musan/p/9998132.html" target="_blank" rel="noopener">https://www.cnblogs.com/musan/p/9998132.html</a></p>
 <p>spring-boot项目打war包并部署到本地的tomcat容器：（去除内置tomcat）<br><a href="https://blog.csdn.net/see__you__again/article/details/82454783" target="_blank" rel="noopener">https://blog.csdn.net/see__you__again/article/details/82454783</a></p>
 <p>JBoss的下载以及安装、部署：<br><a href="https://blog.csdn.net/yilisha258/article/details/80287913" target="_blank" rel="noopener">https://blog.csdn.net/yilisha258/article/details/80287913</a></p>
